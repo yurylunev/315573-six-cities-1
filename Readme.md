@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Юрий Лунёв](https://up.htmlacademy.ru/react/1/user/315573).
-* Наставник: [Александр Махнёв](https://htmlacademy.ru/profile/id7392).
+* Наставник: [Влад Слепкан](https://htmlacademy.ru/profile/id383197).
 
 ---
 
