@@ -32,14 +32,15 @@ const Place = (props) =>
         </div>
       </div>
       <h2 className="place-card__name">
-        <a href="#">{props.name}</a>
+        <a href="#" onClick={props.onClick}>{props.name}</a>
       </h2>
       <p className="place-card__type">Apartment</p>
     </div>
   </article>;
 
 Place.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default Place;
