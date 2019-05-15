@@ -85,8 +85,8 @@ const App = (props) => <React.Fragment>
             </ul>
           </form>
           <div className="cities__places-list places__list tabs__content">
-            {props.placesList.map((placeName, i) =>
-              <Place key={i} name={placeName}/>)}
+            {props.placesList.map((place, i) =>
+              <Place key={i} name={place.name} onClick={place.onClick}/>)}
           </div>
         </section>
         <div className="cities__right-section">
