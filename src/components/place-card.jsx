@@ -44,7 +44,15 @@ const PlaceCard = (props) => {
 };
 
 PlaceCard.propTypes = {
-  offer: PropTypes.object.isRequired,
+  offer: PropTypes.shape({
+    mark: PropTypes.string,
+    imageURL: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    currency: PropTypes.string.isRequired,
+    rate: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired
+  }),
   clickHandler: PropTypes.func.isRequired
 };
 

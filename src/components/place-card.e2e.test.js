@@ -15,15 +15,18 @@ const testOffer = {
   type: `Apartment type 1`
 };
 
+let activeCard = {};
+
 it(`PlaceCard image click handler work`, () => {
-  const clickHandler = jest.fn();
   const placeCard = mount(<PlaceCard
     offer={testOffer}
-    clickHandler={() => clickHandler(testOffer)}
+    clickHandler={(res) => {
+      activeCard = Object.assign({}, res);
+    }}
   />);
 
   const imageWrapper = placeCard.find(`.place-card__image-wrapper`);
   imageWrapper.find(`a`).simulate(`click`);
 
-  expect(clickHandler).toHaveBeenCalledTimes(1);
+  expect(testOffer).toEqual(activeCard);
 });

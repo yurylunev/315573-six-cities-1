@@ -9,6 +9,7 @@ const offers = [
     type: `Apartment`
   },
   {
+    mark: ``,
     imageURL: `img/room.jpg`,
     price: 80,
     currency: `€`,
@@ -17,6 +18,7 @@ const offers = [
     type: `Private room`
   },
   {
+    mark: ``,
     imageURL: `img/apartment-02.jpg`,
     price: 132,
     currency: `€`,
