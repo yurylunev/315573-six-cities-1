@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 import App from './components/app.jsx';
+import offers from './mocks/offers.js';
 
-ReactDOM.render(
-    <App
-      placesList={[`Beautiful & luxurious apartment at great location`, `Wood and stone place`, `Canal View Prinsengracht`,
-        `Nice, cozy, warm big bed apartment`, `Wood and stone place`]}
-    />,
-    document.getElementById(`root`)
-);
+const init = (currentOffers) => {
+  ReactDOM.render(
+      <App placesList={currentOffers}/>,
+      document.getElementById(`root`)
+  );
+};
+
+init(offers);

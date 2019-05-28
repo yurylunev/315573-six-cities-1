@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Place from "./place.jsx";
+import PlacesList from "./places-list.jsx";
 
 const App = (props) => <React.Fragment>
   <header className="header">
@@ -84,10 +84,7 @@ const App = (props) => <React.Fragment>
               <li className="places__option" tabIndex="0">Top rated first</li>
             </ul>
           </form>
-          <div className="cities__places-list places__list tabs__content">
-            {props.placesList.map((place, i) =>
-              <Place key={i} name={place.name} onClick={place.onClick}/>)}
-          </div>
+          <PlacesList placesList={props.placesList}/>
         </section>
         <div className="cities__right-section">
           <section className="cities__map map"/>

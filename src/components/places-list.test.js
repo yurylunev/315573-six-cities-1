@@ -1,11 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./app.jsx";
+import PlacesList from "./places-list.jsx";
 
 const testOffers = [
   {
     mark: `offerMark1`,
-    imageURL: `imageURL1`,
+    imageURL: `imageURL`,
     price: 1000,
     currency: `€`,
     rate: 100,
@@ -14,7 +14,7 @@ const testOffers = [
   },
   {
     mark: `offerMark2`,
-    imageURL: `imageURL2`,
+    imageURL: `imageURL`,
     price: 2000,
     currency: `€`,
     rate: 200,
@@ -22,9 +22,10 @@ const testOffers = [
     type: `Apartment type 2`
   }
 ];
+
 it(`App correctly renders after relaunch`, () => {
   const tree = renderer
-    .create(<App placesList={testOffers}/>)
+    .create(<PlacesList placesList={testOffers} clickHandler={jest.fn()}/>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();
