@@ -25,7 +25,7 @@ const testOffers = [
 
 it(`App correctly renders after relaunch`, () => {
   const tree = renderer
-    .create(<PlacesList placesList={testOffers} clickHandler={jest.fn()}/>)
+    .create(<PlacesList offers={testOffers} clickHandler={jest.fn()}/>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

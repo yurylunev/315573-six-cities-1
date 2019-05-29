@@ -24,7 +24,7 @@ const testOffers = [
 ];
 it(`App correctly renders after relaunch`, () => {
   const tree = renderer
-    .create(<App placesList={testOffers}/>)
+    .create(<App offers={testOffers}/>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();
