@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PlacesList from "./places-list.jsx";
+import CitiesMap from "./map.jsx";
 
 const App = (props) => <React.Fragment>
   <header className="header">
@@ -87,7 +88,9 @@ const App = (props) => <React.Fragment>
           <PlacesList placesList={props.placesList}/>
         </section>
         <div className="cities__right-section">
-          <section className="cities__map map"/>
+          <section className="cities__map map">
+            <CitiesMap currentView={[52.3709553943508, 4.89309666406198]} placesList={props.placesList}/>
+          </section>
         </div>
       </div>
     </div>
