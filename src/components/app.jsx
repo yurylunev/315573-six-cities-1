@@ -85,11 +85,11 @@ const App = (props) => <React.Fragment>
               <li className="places__option" tabIndex="0">Top rated first</li>
             </ul>
           </form>
-          <PlacesList placesList={props.placesList}/>
+          <PlacesList offers={props.offers}/>
         </section>
         <div className="cities__right-section">
           <section className="cities__map map">
-            <CitiesMap currentView={[52.3709553943508, 4.89309666406198]} placesList={props.placesList}/>
+            <CitiesMap currentView={[52.3709553943508, 4.89309666406198]} offers={props.offers}/>
           </section>
         </div>
       </div>
@@ -99,7 +99,7 @@ const App = (props) => <React.Fragment>
 </React.Fragment>;
 
 App.propTypes = {
-  placesList: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired
 };
 
 export default App;
