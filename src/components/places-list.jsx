@@ -12,10 +12,10 @@ class PlacesList extends React.PureComponent {
 
   render() {
     return <div className="cities__places-list places__list tabs__content">
-      {this.props.placesList.map((place, i) => {
+      {this.props.offers.map((offer, i) => {
         return <PlaceCard
           key={i}
-          offer={place}
+          offer={offer}
           clickHandler={(clickOffer) => {
             this.setState({activeCard: clickOffer});
           }}
@@ -26,7 +26,7 @@ class PlacesList extends React.PureComponent {
 }
 
 PlacesList.propTypes = {
-  placesList: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired
 };
 
 export default PlacesList;

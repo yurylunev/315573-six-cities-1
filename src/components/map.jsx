@@ -7,7 +7,7 @@ class CitiesMap extends React.PureComponent {
     super(props);
     this.state = {
       currentView: props.currentView,
-      placesList: props.placesList
+      offers: props.offers
     };
   }
 
@@ -35,10 +35,10 @@ class CitiesMap extends React.PureComponent {
       .marker(offerCords, {icon})
       .addTo(map);
 
-    if (this.state.placesList) {
-      this.state.placesList.forEach((place) => {
+    if (this.state.offers) {
+      this.state.offers.forEach((offer) => {
         leaflet
-          .marker(place.gps, {icon})
+          .marker(offer.gps, {icon})
           .addTo(map);
       });
     }
@@ -51,7 +51,7 @@ class CitiesMap extends React.PureComponent {
 
 CitiesMap.propTypes = {
   currentView: PropTypes.array.isRequired,
-  placesList: PropTypes.array
+  offers: PropTypes.array
 };
 
 export default CitiesMap;

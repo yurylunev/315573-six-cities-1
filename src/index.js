@@ -5,7 +5,7 @@ import offers from './mocks/offers.js';
 
 const init = (currentOffers) => {
   ReactDOM.render(
-      <App placesList={currentOffers}/>,
+      <App offers={currentOffers}/>,
       document.getElementById(`root`)
   );
 };
