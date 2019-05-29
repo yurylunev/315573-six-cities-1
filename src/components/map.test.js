@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./app.jsx";
+import CitiesMap from "./map.jsx";
 
 jest.mock(`leaflet`, () => ({
   map: () => ({
@@ -18,7 +18,7 @@ jest.mock(`leaflet`, () => ({
 const testOffers = [
   {
     mark: `offerMark1`,
-    imageURL: `imageURL1`,
+    imageURL: `imageURL`,
     price: 1000,
     currency: `€`,
     rate: 100,
@@ -28,7 +28,7 @@ const testOffers = [
   },
   {
     mark: `offerMark2`,
-    imageURL: `imageURL2`,
+    imageURL: `imageURL`,
     price: 2000,
     currency: `€`,
     rate: 200,
@@ -40,7 +40,7 @@ const testOffers = [
 
 it(`App correctly renders after relaunch`, () => {
   const tree = renderer
-    .create(<App offers={testOffers}/>)
+    .create(<CitiesMap offers={testOffers} currentView={[52.369553943508, 4.85309666406198]} clickHandler={jest.fn()}/>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();
