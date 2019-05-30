@@ -10,7 +10,8 @@ const testOffers = [
     currency: `€`,
     rate: 100,
     name: `Name of offer 1`,
-    type: `Apartment type 1`
+    type: `Apartment type 1`,
+    gps: [52.369553943508, 4.85309666406198]
   },
   {
     mark: `offerMark2`,
@@ -19,13 +20,14 @@ const testOffers = [
     currency: `€`,
     rate: 200,
     name: `Name of offer 2`,
-    type: `Apartment type 2`
+    type: `Apartment type 2`,
+    gps: [52.369553943508, 4.85309666406198]
   }
 ];
 
 it(`App correctly renders after relaunch`, () => {
   const tree = renderer
-    .create(<PlacesList placesList={testOffers} clickHandler={jest.fn()}/>)
+    .create(<PlacesList offers={testOffers} clickHandler={jest.fn()}/>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

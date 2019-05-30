@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PlacesList from "./places-list.jsx";
+import CitiesMap from "./map.jsx";
 
 const App = (props) => <React.Fragment>
   <header className="header">
@@ -84,10 +85,12 @@ const App = (props) => <React.Fragment>
               <li className="places__option" tabIndex="0">Top rated first</li>
             </ul>
           </form>
-          <PlacesList placesList={props.placesList}/>
+          <PlacesList offers={props.offers}/>
         </section>
         <div className="cities__right-section">
-          <section className="cities__map map"/>
+          <section className="cities__map map">
+            <CitiesMap currentView={[52.3709553943508, 4.89309666406198]} offers={props.offers}/>
+          </section>
         </div>
       </div>
     </div>
@@ -96,7 +99,7 @@ const App = (props) => <React.Fragment>
 </React.Fragment>;
 
 App.propTypes = {
-  placesList: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired
 };
 
 export default App;
