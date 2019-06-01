@@ -15,4 +15,4 @@ const init = (currentOffers) => {
   </Provider>, document.getElementById(`root`));
 };
 
-init(offers[0]);
+init(offers);
