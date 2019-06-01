@@ -9,8 +9,8 @@ const initialState = {
 const ActionCreators = {
   'CHANGE_CITY': () => {
   },
-  'GET_OFFERS': (cityName) => {
-    const offers = allCityOffers[cityName];
+  'GET_OFFERS': (cityId) => {
+    const offers = allCityOffers[cityId];
     return {
       type: `GET_OFFERS`,
       payload: offers

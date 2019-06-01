@@ -5,14 +5,14 @@ import {reducer} from "./reducer";
 import {Provider} from "react-redux";
 
 import App from './components/app.jsx';
-import offers from './mocks/offers.js';
+import allOffers from './mocks/offers.js';
 
 const store = createStore(reducer);
 
-const init = (currentOffers) => {
+const init = (offers) => {
   ReactDOM.render(<Provider store={store}>
-    <App offers={currentOffers}/>
+    <App offers={offers[0]} cities={offers.map((city) => city.cityName)}/>
   </Provider>, document.getElementById(`root`));
 };
 
-init(offers);
+init(allOffers);

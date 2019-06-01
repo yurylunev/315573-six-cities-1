@@ -1,4 +1,4 @@
-const offers = [
+const allOffers = [
   {
     cityName: `Paris`,
     offersCount: 309,
@@ -277,4 +277,4 @@ const offers = [
   }
 ];
 
-export default offers;
+export default allOffers;

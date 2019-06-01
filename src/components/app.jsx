@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import PlacesList from "./places-list.jsx";
 import CitiesMap from "./map.jsx";
 import CitiesList from "./cities-list.jsx";
+import {connect} from "react-redux";
+import {ActionCreators} from "../reducer";
 
 const App = (props) => <React.Fragment>
   <header className="header">
@@ -31,13 +33,13 @@ const App = (props) => <React.Fragment>
   <main className="page__main page__main--index">
     <h1 className="visually-hidden">Cities</h1>
     <div className="cities tabs">
-      <CitiesList cities={props.offers.map((city) => city.cityName)}/>
+      <CitiesList cities={props.cities} clickHandler={props.onCityChange}/>
     </div>
     <div className="cities__places-wrapper">
       <div className="cities__places-container container">
         <section className="cities__places places">
           <h2 className="visually-hidden">Places</h2>
-          <b className="places__found">{props.offers[0].offersCount} places to stay in {props.offers[0].cityName}</b>
+          <b className="places__found">{props.offers.offersCount} places to stay in {props.offers.cityName}</b>
           <form className="places__sorting" action="#" method="get">
             <span className="places__sorting-caption">Sort by</span>
             <span className="places__sorting-type" tabIndex="0">
@@ -53,11 +55,11 @@ const App = (props) => <React.Fragment>
               <li className="places__option" tabIndex="0">Top rated first</li>
             </ul>
           </form>
-          <PlacesList offers={props.offers[0].offers}/>
+          <PlacesList offers={props.offers.offers}/>
         </section>
         <div className="cities__right-section">
           <section className="cities__map map">
-            <CitiesMap currentView={[52.3709553943508, 4.89309666406198]} offers={props.offers[0].offers}/>
+            <CitiesMap currentView={[52.3709553943508, 4.89309666406198]} offers={props.offers.offers}/>
           </section>
         </div>
       </div>
@@ -67,7 +69,16 @@ const App = (props) => <React.Fragment>
 </React.Fragment>;
 
 App.propTypes = {
-  offers: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired,
+  cities: PropTypes.array.isRequired,
+  onCityChange: PropTypes.array.isRequired
 };
 
-export default App;
+const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps);
+const mapDispatchToProps = (dispatch) => ({
+  onCityChange: (cityId) => {
+    dispatch(ActionCreators[`GET_OFFERS`](cityId));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
