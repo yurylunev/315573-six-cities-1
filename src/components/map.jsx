@@ -34,7 +34,7 @@ class CitiesMap extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.map = leaflet.map(this.mapContainer.current.id, {
+    this.map = leaflet.map(`map`, {
       center: this.state.currentCityGPS,
       zoom: this.zoom,
       zoomControl: false,

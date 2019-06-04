@@ -8,10 +8,9 @@ const ActionCreators = {
     payload: id
   }),
   'GET_OFFERS': (cityId) => {
-    const offers = allCityOffers[cityId];
     return {
       type: `GET_OFFERS`,
-      payload: offers
+      payload: allCityOffers[cityId]
     };
   }
 };

@@ -17,32 +17,107 @@ jest.mock(`leaflet`, () => ({
 
 const testOffers = [
   {
-    mark: `offerMark1`,
-    imageURL: `imageURL`,
-    price: 1000,
-    currency: `€`,
-    rate: 100,
-    name: `Name of offer 1`,
-    type: `Apartment type 1`,
-    gps: [52.369553943508, 4.85309666406198]
+    id: 0,
+    cityName: `Name1`,
+    gps: [0, 0],
+    offersCount: 0,
+    offers: [
+      {
+        mark: `mark`,
+        imageURL: `imageURL`,
+        price: 9,
+        currency: `€`,
+        rate: 1,
+        name: `mockName1`,
+        type: `typeApartment`,
+        gps: [0, 0]
+      },
+      {
+        mark: `mark`,
+        imageURL: `imageURL`,
+        price: 9,
+        currency: `€`,
+        rate: 1,
+        name: `mockName2`,
+        type: `typeApartment2`,
+        gps: [0, 0]
+      },
+      {
+        mark: ``,
+        imageURL: `imageURL`,
+        price: 9,
+        currency: `€`,
+        rate: 1,
+        name: `mockName3`,
+        type: `typeApartment3`,
+        gps: [0, 0]
+      },
+      {
+        mark: `mark`,
+        imageURL: `imageURL`,
+        price: -9,
+        currency: `€`,
+        rate: 0,
+        name: `mockName4`,
+        type: `typeApartment4`,
+        gps: [0, 0]
+      }
+    ]
   },
   {
-    mark: `offerMark2`,
-    imageURL: `imageURL`,
-    price: 2000,
-    currency: `€`,
-    rate: 200,
-    name: `Name of offer 2`,
-    type: `Apartment type 2`,
-    gps: [52.369553943508, 4.85309666406198]
+    id: 1,
+    cityName: `Name2`,
+    gps: [999, 999],
+    offersCount: 999,
+    offers: [
+      {
+        mark: `mark`,
+        imageURL: `imageURL`,
+        price: 9,
+        currency: `€`,
+        rate: 1,
+        name: `mockName1`,
+        type: `typeApartment`,
+        gps: [999, 999]
+      },
+      {
+        mark: `mark`,
+        imageURL: `imageURL`,
+        price: 9,
+        currency: `€`,
+        rate: 1,
+        name: `mockName2`,
+        type: `typeApartment2`,
+        gps: [0, 0]
+      },
+      {
+        mark: ``,
+        imageURL: `imageURL`,
+        price: 9,
+        currency: `€`,
+        rate: 1,
+        name: `mockName3`,
+        type: `typeApartment3`,
+        gps: [0, 0]
+      },
+      {
+        mark: `mark`,
+        imageURL: `imageURL`,
+        price: -9,
+        currency: `€`,
+        rate: 0,
+        name: `mockName4`,
+        type: `typeApartment4`,
+        gps: [0, 0]
+      }
+    ]
   }
 ];
 
 it(`App correctly renders after relaunch`, () => {
   const tree = renderer
-    .create(<CitiesMap offers={testOffers} currentView={[52.369553943508, 4.85309666406198]} clickHandler={jest.fn()}/>)
+    .create(<CitiesMap offers={testOffers} currentCityGPS={[52.369553943508, 4.85309666406198]} currentId={0}/>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();
 });
-

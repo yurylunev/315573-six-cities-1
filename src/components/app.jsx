@@ -6,7 +6,7 @@ import CitiesList from "./cities-list.jsx";
 import {connect} from "react-redux";
 import {ActionCreators} from "../reducer";
 
-const App = (props) => {
+export const App = (props) => {
   const currentCity = props.data[props.currentId];
   return <React.Fragment>
     <header className="header">

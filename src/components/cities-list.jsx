@@ -5,8 +5,8 @@ const CitiesList = (props) => {
   const {cities, currentId, clickHandler} = props;
   return <section className="locations container">
     <ul className="locations__list tabs__list">
-      {cities.map((city) => (
-        <li key={city.id} className="locations__item" onClick={() => clickHandler(city.id)}>
+      {cities.map((city, i) => (
+        <li key={i} className="locations__item" onClick={() => clickHandler(city.id)}>
           <a className={
             `locations__item-link tabs__item${city.id === currentId ? ` tabs__item--active` : ``}`
           } href="#">

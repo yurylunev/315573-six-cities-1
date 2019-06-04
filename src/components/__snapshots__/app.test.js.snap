@@ -73,73 +73,24 @@ Array [
         >
           <li
             className="locations__item"
+            onClick={[Function]}
           >
             <a
               className="locations__item-link tabs__item"
               href="#"
             >
-              <span>
-                Paris
-              </span>
+              <span />
             </a>
           </li>
           <li
             className="locations__item"
+            onClick={[Function]}
           >
             <a
               className="locations__item-link tabs__item"
               href="#"
             >
-              <span>
-                Cologne
-              </span>
-            </a>
-          </li>
-          <li
-            className="locations__item"
-          >
-            <a
-              className="locations__item-link tabs__item"
-              href="#"
-            >
-              <span>
-                Brussels
-              </span>
-            </a>
-          </li>
-          <li
-            className="locations__item"
-          >
-            <a
-              className="locations__item-link tabs__item tabs__item--active"
-            >
-              <span>
-                Amsterdam
-              </span>
-            </a>
-          </li>
-          <li
-            className="locations__item"
-          >
-            <a
-              className="locations__item-link tabs__item"
-              href="#"
-            >
-              <span>
-                Hamburg
-              </span>
-            </a>
-          </li>
-          <li
-            className="locations__item"
-          >
-            <a
-              className="locations__item-link tabs__item"
-              href="#"
-            >
-              <span>
-                Dusseldorf
-              </span>
+              <span />
             </a>
           </li>
         </ul>
@@ -162,7 +113,9 @@ Array [
           <b
             className="places__found"
           >
-            312 places to stay in Amsterdam
+            0
+             places to stay in 
+            Name1
           </b>
           <form
             action="#"
@@ -228,7 +181,7 @@ Array [
                 className="place-card__mark"
               >
                 <span>
-                  offerMark1
+                  mark
                 </span>
               </div>
               <div
@@ -242,7 +195,7 @@ Array [
                     alt="Place image"
                     className="place-card__image"
                     height="200"
-                    src="imageURL1"
+                    src="imageURL"
                     width="260"
                   />
                 </a>
@@ -260,7 +213,7 @@ Array [
                       className="place-card__price-value"
                     >
                       €
-                      1000
+                      9
                     </b>
                     <span
                       className="place-card__price-text"
@@ -297,7 +250,7 @@ Array [
                     <span
                       style={
                         Object {
-                          "width": "100%",
+                          "width": "1%",
                         }
                       }
                     />
@@ -315,13 +268,13 @@ Array [
                     href="#"
                     onClick={[Function]}
                   >
-                    Name of offer 1
+                    mockName1
                   </a>
                 </h2>
                 <p
                   className="place-card__type"
                 >
-                  Apartment type 1
+                  typeApartment
                 </p>
               </div>
             </article>
@@ -332,7 +285,7 @@ Array [
                 className="place-card__mark"
               >
                 <span>
-                  offerMark2
+                  mark
                 </span>
               </div>
               <div
@@ -346,7 +299,7 @@ Array [
                     alt="Place image"
                     className="place-card__image"
                     height="200"
-                    src="imageURL2"
+                    src="imageURL"
                     width="260"
                   />
                 </a>
@@ -364,7 +317,7 @@ Array [
                       className="place-card__price-value"
                     >
                       €
-                      2000
+                      9
                     </b>
                     <span
                       className="place-card__price-text"
@@ -401,7 +354,7 @@ Array [
                     <span
                       style={
                         Object {
-                          "width": "200%",
+                          "width": "1%",
                         }
                       }
                     />
@@ -419,13 +372,214 @@ Array [
                     href="#"
                     onClick={[Function]}
                   >
-                    Name of offer 2
+                    mockName2
                   </a>
                 </h2>
                 <p
                   className="place-card__type"
                 >
-                  Apartment type 2
+                  typeApartment2
+                </p>
+              </div>
+            </article>
+            <article
+              className="cities__place-card place-card"
+            >
+              <div
+                className="cities__image-wrapper place-card__image-wrapper"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                >
+                  <img
+                    alt="Place image"
+                    className="place-card__image"
+                    height="200"
+                    src="imageURL"
+                    width="260"
+                  />
+                </a>
+              </div>
+              <div
+                className="place-card__info"
+              >
+                <div
+                  className="place-card__price-wrapper"
+                >
+                  <div
+                    className="place-card__price"
+                  >
+                    <b
+                      className="place-card__price-value"
+                    >
+                      €
+                      9
+                    </b>
+                    <span
+                      className="place-card__price-text"
+                    >
+                      / night
+                    </span>
+                  </div>
+                  <button
+                    className="place-card__bookmark-button button"
+                    type="button"
+                  >
+                    <svg
+                      className="place-card__bookmark-icon"
+                      height="19"
+                      width="18"
+                    >
+                      <use
+                        xlinkHref="#icon-bookmark"
+                      />
+                    </svg>
+                    <span
+                      className="visually-hidden"
+                    >
+                      To bookmarks
+                    </span>
+                  </button>
+                </div>
+                <div
+                  className="place-card__rating rating"
+                >
+                  <div
+                    className="place-card__stars rating__stars"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "width": "1%",
+                        }
+                      }
+                    />
+                    <span
+                      className="visually-hidden"
+                    >
+                      Rating
+                    </span>
+                  </div>
+                </div>
+                <h2
+                  className="place-card__name"
+                >
+                  <a
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    mockName3
+                  </a>
+                </h2>
+                <p
+                  className="place-card__type"
+                >
+                  typeApartment3
+                </p>
+              </div>
+            </article>
+            <article
+              className="cities__place-card place-card"
+            >
+              <div
+                className="place-card__mark"
+              >
+                <span>
+                  mark
+                </span>
+              </div>
+              <div
+                className="cities__image-wrapper place-card__image-wrapper"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                >
+                  <img
+                    alt="Place image"
+                    className="place-card__image"
+                    height="200"
+                    src="imageURL"
+                    width="260"
+                  />
+                </a>
+              </div>
+              <div
+                className="place-card__info"
+              >
+                <div
+                  className="place-card__price-wrapper"
+                >
+                  <div
+                    className="place-card__price"
+                  >
+                    <b
+                      className="place-card__price-value"
+                    >
+                      €
+                      -9
+                    </b>
+                    <span
+                      className="place-card__price-text"
+                    >
+                      / night
+                    </span>
+                  </div>
+                  <button
+                    className="place-card__bookmark-button button"
+                    type="button"
+                  >
+                    <svg
+                      className="place-card__bookmark-icon"
+                      height="19"
+                      width="18"
+                    >
+                      <use
+                        xlinkHref="#icon-bookmark"
+                      />
+                    </svg>
+                    <span
+                      className="visually-hidden"
+                    >
+                      To bookmarks
+                    </span>
+                  </button>
+                </div>
+                <div
+                  className="place-card__rating rating"
+                >
+                  <div
+                    className="place-card__stars rating__stars"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "width": "0%",
+                        }
+                      }
+                    />
+                    <span
+                      className="visually-hidden"
+                    >
+                      Rating
+                    </span>
+                  </div>
+                </div>
+                <h2
+                  className="place-card__name"
+                >
+                  <a
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    mockName4
+                  </a>
+                </h2>
+                <p
+                  className="place-card__type"
+                >
+                  typeApartment4
                 </p>
               </div>
             </article>
