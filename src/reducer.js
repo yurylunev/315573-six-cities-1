@@ -1,14 +1,12 @@
 import allCityOffers from './mocks/offers';
 
-const initialState = {
-  cityName: ``,
-  offersCount: 0,
-  offers: []
-};
+const initialState = Object.assign({}, {data: allCityOffers}, {currentId: 0});
 
 const ActionCreators = {
-  'CHANGE_CITY': () => {
-  },
+  'CHANGE_CITY': (id) => ({
+    type: `CHANGE_CITY`,
+    payload: id
+  }),
   'GET_OFFERS': (cityId) => {
     const offers = allCityOffers[cityId];
     return {
@@ -21,7 +19,7 @@ const ActionCreators = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case `CHANGE_CITY`:
-      return Object.assign({}, state, {});
+      return Object.assign({}, state, {currentId: action.payload});
     case `GET_OFFERS`:
       return Object.assign({}, action.payload);
   }
