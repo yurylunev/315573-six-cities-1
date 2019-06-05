@@ -114,7 +114,7 @@ const testOffers = [
   }
 ];
 
-it(`App correctly renders after relaunch`, () => {
+it(`Map correctly renders`, () => {
   const tree = renderer
     .create(<CitiesMap offers={testOffers} currentCityGPS={[52.369553943508, 4.85309666406198]} currentId={0}/>)
     .toJSON();

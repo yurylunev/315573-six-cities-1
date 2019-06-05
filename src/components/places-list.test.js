@@ -25,7 +25,7 @@ const testOffers = [
   }
 ];
 
-it(`App correctly renders after relaunch`, () => {
+it(`PlacesList correctly renders`, () => {
   const tree = renderer
     .create(<PlacesList offers={testOffers} clickHandler={jest.fn()}/>)
     .toJSON();
