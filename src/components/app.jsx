@@ -62,6 +62,7 @@ export const App = (props) => {
           <div className="cities__right-section">
             <section className="cities__map map">
               <CitiesMap
+                key={props.currentId}
                 currentId={props.currentId}
                 currentCityGPS={currentCity.gps}
                 offers={currentCity.offers}/>
