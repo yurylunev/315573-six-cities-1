@@ -17,9 +17,9 @@ it(`Should change city`, () => {
 });
 
 it(`Should get offers`, () => {
-  expect(reducer({}, {
-    type: `GET_OFFERS`,
-    payload: {id: 0, cityName: `cityName`, gps: [1, 2]}
+  expect(reducer({data: allCityOffers}, {
+    type: `GET_CITY_OFFERS`,
+    payload: 0
   }))
-    .toEqual({id: 0, cityName: `cityName`, gps: [1, 2]});
+    .toEqual(allCityOffers[0]);
 });

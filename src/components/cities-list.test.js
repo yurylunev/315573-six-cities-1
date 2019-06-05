@@ -16,4 +16,3 @@ it(`App correctly renders after relaunch`, () => {
 
   expect(tree).toMatchSnapshot();
 });
-

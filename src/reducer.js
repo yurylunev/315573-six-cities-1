@@ -7,10 +7,10 @@ const ActionCreators = {
     type: `CHANGE_CITY`,
     payload: id
   }),
-  'GET_OFFERS': (cityId) => {
+  'GET_CITY_OFFERS': (cityId) => {
     return {
-      type: `GET_OFFERS`,
-      payload: allCityOffers[cityId]
+      type: `GET_CITY_OFFERS`,
+      payload: cityId
     };
   }
 };
@@ -19,8 +19,8 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case `CHANGE_CITY`:
       return Object.assign({}, state, {currentId: action.payload});
-    case `GET_OFFERS`:
-      return Object.assign({}, action.payload);
+    case `GET_CITY_OFFERS`:
+      return Object.assign({}, state.data[action.payload]);
   }
   return state;
 };
