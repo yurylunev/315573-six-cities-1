@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App correctly renders after relaunch 1`] = `
+exports[`PalceCard correctly renders after relaunch 1`] = `
 <article
   className="cities__place-card place-card"
 >
