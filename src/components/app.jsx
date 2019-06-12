@@ -5,7 +5,6 @@ import CitiesMap from "./map.jsx";
 import CitiesList from "./cities-list.jsx";
 import {connect} from "react-redux";
 import {ActionCreators} from "../reducer";
-import withActiveCard from "../hocs/with-active-card/with-active-card";
 
 export const App = (props) => {
   const currentCity = props.data[props.currentId];
@@ -58,7 +57,7 @@ export const App = (props) => {
                 <li className="places__option" tabIndex="0">Top rated first</li>
               </ul>
             </form>
-            {withActiveCard(<PlacesList offers={currentCity.offers}/>)}
+            <PlacesList offers={currentCity.offers} clickHandler={()=>{}}/>
           </section>
           <div className="cities__right-section">
             <section className="cities__map map">
@@ -95,7 +94,7 @@ const mapStateToProps = (state) => Object.assign({}, state, {
 });
 const mapDispatchToProps = (dispatch) => ({
   onCityChange: (props) => {
-    dispatch(ActionCreators[`CHANGE_CITY`](props));
+    dispatch(ActionCreators[`CHANGE_CITY`](props.currentId));
   }
 });
 

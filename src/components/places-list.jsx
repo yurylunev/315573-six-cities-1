@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PlaceCard from "./place-card.jsx";
+import withActiveCard from "../hocs/with-active-card/with-active-card";
 
 class PlacesList extends React.PureComponent {
   constructor(props) {
@@ -13,7 +14,7 @@ class PlacesList extends React.PureComponent {
         return <PlaceCard
           key={i}
           offer={offer}
-          clickHandler={() => this.props.clickHandler()}
+          clickHandler={() => this.props.clickHandler(offer)}
         />;
       })}
     </div>;
@@ -25,4 +26,4 @@ PlacesList.propTypes = {
   clickHandler: PropTypes.func.isRequired
 };
 
-export default PlacesList;
+export default withActiveCard(PlacesList);
