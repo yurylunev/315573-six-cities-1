@@ -21,12 +21,12 @@ it(`PlaceCard image click handler work`, () => {
   const placeCard = mount(<PlaceCard
     offer={testOffer}
     clickHandler={(res) => {
-      activeCard = Object.assign({}, res);
+      activeCard = Object.assign({}, {activeCard: res.activeCard});
     }}
   />);
 
   const imageWrapper = placeCard.find(`.place-card__image-wrapper`);
   imageWrapper.find(`a`).simulate(`click`);
 
-  expect(testOffer).toEqual(activeCard);
+  expect(testOffer).toEqual(activeCard.activeCard);
 });

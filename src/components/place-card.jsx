@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import withActiveCard from "../hocs/with-active-card/with-active-card";
 
 const PlaceCard = (props) => {
   const {offer, clickHandler} = props;
