@@ -3,7 +3,7 @@ import allCityOffers from '../mocks/offers';
 
 it(`Should return initial state`, () => {
   expect(reducer(undefined, {}))
-    .toEqual(Object.assign({}, {data: allCityOffers}, {currentId: 0}));
+    .toEqual(Object.assign({}, {data: allCityOffers, currentId: 0, currentPlaceId: 0}));
 });
 
 it(`Should change city`, () => {

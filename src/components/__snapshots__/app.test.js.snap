@@ -175,7 +175,7 @@ Array [
             className="cities__places-list places__list tabs__content"
           >
             <article
-              className="cities__place-card place-card"
+              className="cities__place-card place-card place-card--active"
             >
               <div
                 className="place-card__mark"
@@ -279,7 +279,7 @@ Array [
               </div>
             </article>
             <article
-              className="cities__place-card place-card"
+              className="cities__place-card place-card place-card--active"
             >
               <div
                 className="place-card__mark"
@@ -383,7 +383,7 @@ Array [
               </div>
             </article>
             <article
-              className="cities__place-card place-card"
+              className="cities__place-card place-card place-card--active"
             >
               <div
                 className="cities__image-wrapper place-card__image-wrapper"
@@ -480,7 +480,7 @@ Array [
               </div>
             </article>
             <article
-              className="cities__place-card place-card"
+              className="cities__place-card place-card place-card--active"
             >
               <div
                 className="place-card__mark"
