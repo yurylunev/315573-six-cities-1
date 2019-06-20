@@ -5,27 +5,32 @@ const withActiveCard = (Component) => {
   class WithActiveCard extends React.PureComponent {
     constructor(props) {
       super(props);
-      this.state = {};
-    }
-
-    _handleClick(e) {
-      this.setState(e);
     }
 
     render() {
+      const {city, currentId, currentPlaceId, offer} = this.props;
+      let activeClassName = ``;
+      if ((typeof city !== `undefined`) && currentId === city.id) {
+        activeClassName = ` tabs__item--active`;
+      } else if ((typeof offer !== `undefined`) && currentPlaceId === offer.id) {
+        activeClassName = ` place-card--active`;
+      }
       return <Component
         {...this.props}
-        active={this.state.activated}
-        clickHandler={(e) => {
-          this._handleClick(e);
-          this.props.clickHandler(e);
-        }}
+        activeClassName={activeClassName}
       />;
     }
   }
 
   WithActiveCard.propTypes = {
-    clickHandler: PropTypes.func.isRequired
+    city: PropTypes.shape({
+      id: PropTypes.number.isRequired
+    }),
+    offer: PropTypes.shape({
+      id: PropTypes.number.isRequired
+    }),
+    currentId: PropTypes.number,
+    currentPlaceId: PropTypes.number
   };
   return WithActiveCard;
 };

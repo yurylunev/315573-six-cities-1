@@ -57,7 +57,7 @@ export const App = (props) => {
                 <li className="places__option" tabIndex="0">Top rated first</li>
               </ul>
             </form>
-            <PlacesList offers={currentCity.offers} clickHandler={()=>{}}/>
+            <PlacesList offers={currentCity.offers} clickHandler={props.onPlaceChange} currentPlaceId={props.currentPlaceId}/>
           </section>
           <div className="cities__right-section">
             <section className="cities__map map">
@@ -82,8 +82,10 @@ App.propTypes = {
     offers: PropTypes.array.isRequired
   })),
   currentId: PropTypes.number.isRequired,
+  currentPlaceId: PropTypes.number.isRequired,
   cities: PropTypes.array.isRequired,
-  onCityChange: PropTypes.func.isRequired
+  onCityChange: PropTypes.func.isRequired,
+  onPlaceChange: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => Object.assign({}, state, {
@@ -94,7 +96,10 @@ const mapStateToProps = (state) => Object.assign({}, state, {
 });
 const mapDispatchToProps = (dispatch) => ({
   onCityChange: (props) => {
-    dispatch(ActionCreators[`CHANGE_CITY`](props.currentId));
+    dispatch(ActionCreators[`CHANGE_CITY`](props));
+  },
+  onPlaceChange: (props) => {
+    dispatch(ActionCreators[`CHANGE_PLACE`](props));
   }
 });
 
