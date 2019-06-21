@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import withActiveCard from "../hocs/with-active-card/with-active-card";
 
 const PlaceCard = (props) => {
-  const {offer, clickHandler} = props;
-
-  return <article className="cities__place-card place-card">
+  const {offer, clickHandler, activeClassName} = props;
+  return <article className={`cities__place-card place-card${activeClassName ? ` place-card--${activeClassName}` : ``}`}>
     {(offer.mark)
       ? <div className="place-card__mark">
         <span>{offer.mark}</span>
@@ -12,7 +12,7 @@ const PlaceCard = (props) => {
       : null
     }
     <div className="cities__image-wrapper place-card__image-wrapper">
-      <a href="#" onClick={() => clickHandler(offer)}>
+      <a onClick={() => clickHandler(offer.id)}>
         <img className="place-card__image" src={offer.imageURL} width="260" height="200" alt="Place image"/>
       </a>
     </div>
@@ -36,7 +36,7 @@ const PlaceCard = (props) => {
         </div>
       </div>
       <h2 className="place-card__name">
-        <a href="#" onClick={() => clickHandler(offer)}>{offer.name}</a>
+        <a onClick={() => clickHandler(offer.id)}>{offer.name}</a>
       </h2>
       <p className="place-card__type">{offer.type}</p>
     </div>
@@ -53,7 +53,9 @@ PlaceCard.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired
   }),
-  clickHandler: PropTypes.func.isRequired
+  activeClassName: PropTypes.string.isRequired,
+  clickHandler: PropTypes.func.isRequired,
+  currentPlaceId: PropTypes.number.isRequired
 };
 
-export default PlaceCard;
+export default withActiveCard(PlaceCard);

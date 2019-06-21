@@ -5,20 +5,17 @@ import PlaceCard from "./place-card.jsx";
 class PlacesList extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      activeCard: {}
-    };
   }
 
   render() {
+    const {offers, clickHandler, currentPlaceId} = this.props;
     return <div className="cities__places-list places__list tabs__content">
-      {this.props.offers.map((offer, i) => {
+      {offers.map((offer, i) => {
         return <PlaceCard
           key={i}
           offer={offer}
-          clickHandler={(clickOffer) => {
-            this.setState({activeCard: clickOffer});
-          }}
+          clickHandler={clickHandler}
+          currentPlaceId={currentPlaceId}
         />;
       })}
     </div>;
@@ -26,7 +23,9 @@ class PlacesList extends React.PureComponent {
 }
 
 PlacesList.propTypes = {
-  offers: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired,
+  clickHandler: PropTypes.func.isRequired,
+  currentPlaceId: PropTypes.number.isRequired
 };
 
 export default PlacesList;

@@ -77,7 +77,6 @@ Array [
           >
             <a
               className="locations__item-link tabs__item"
-              href="#"
             >
               <span />
             </a>
@@ -88,7 +87,6 @@ Array [
           >
             <a
               className="locations__item-link tabs__item"
-              href="#"
             >
               <span />
             </a>
@@ -175,7 +173,7 @@ Array [
             className="cities__places-list places__list tabs__content"
           >
             <article
-              className="cities__place-card place-card"
+              className="cities__place-card place-card place-card--active"
             >
               <div
                 className="place-card__mark"
@@ -188,7 +186,6 @@ Array [
                 className="cities__image-wrapper place-card__image-wrapper"
               >
                 <a
-                  href="#"
                   onClick={[Function]}
                 >
                   <img
@@ -265,7 +262,6 @@ Array [
                   className="place-card__name"
                 >
                   <a
-                    href="#"
                     onClick={[Function]}
                   >
                     mockName1
@@ -279,7 +275,7 @@ Array [
               </div>
             </article>
             <article
-              className="cities__place-card place-card"
+              className="cities__place-card place-card place-card--active"
             >
               <div
                 className="place-card__mark"
@@ -292,7 +288,6 @@ Array [
                 className="cities__image-wrapper place-card__image-wrapper"
               >
                 <a
-                  href="#"
                   onClick={[Function]}
                 >
                   <img
@@ -369,7 +364,6 @@ Array [
                   className="place-card__name"
                 >
                   <a
-                    href="#"
                     onClick={[Function]}
                   >
                     mockName2
@@ -383,13 +377,12 @@ Array [
               </div>
             </article>
             <article
-              className="cities__place-card place-card"
+              className="cities__place-card place-card place-card--active"
             >
               <div
                 className="cities__image-wrapper place-card__image-wrapper"
               >
                 <a
-                  href="#"
                   onClick={[Function]}
                 >
                   <img
@@ -466,7 +459,6 @@ Array [
                   className="place-card__name"
                 >
                   <a
-                    href="#"
                     onClick={[Function]}
                   >
                     mockName3
@@ -480,7 +472,7 @@ Array [
               </div>
             </article>
             <article
-              className="cities__place-card place-card"
+              className="cities__place-card place-card place-card--active"
             >
               <div
                 className="place-card__mark"
@@ -493,7 +485,6 @@ Array [
                 className="cities__image-wrapper place-card__image-wrapper"
               >
                 <a
-                  href="#"
                   onClick={[Function]}
                 >
                   <img
@@ -570,7 +561,6 @@ Array [
                   className="place-card__name"
                 >
                   <a
-                    href="#"
                     onClick={[Function]}
                   >
                     mockName4

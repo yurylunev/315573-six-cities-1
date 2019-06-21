@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PalceCard correctly renders after relaunch 1`] = `
+exports[`PlaceCard correctly renders 1`] = `
 <article
-  className="cities__place-card place-card"
+  className="cities__place-card place-card place-card--active"
 >
   <div
     className="place-card__mark"
@@ -15,7 +15,6 @@ exports[`PalceCard correctly renders after relaunch 1`] = `
     className="cities__image-wrapper place-card__image-wrapper"
   >
     <a
-      href="#"
       onClick={[Function]}
     >
       <img
@@ -92,7 +91,6 @@ exports[`PalceCard correctly renders after relaunch 1`] = `
       className="place-card__name"
     >
       <a
-        href="#"
         onClick={[Function]}
       >
         Name of offer 1

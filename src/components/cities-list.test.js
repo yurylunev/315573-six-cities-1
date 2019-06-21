@@ -9,7 +9,7 @@ const cities = [
   `Citie 4`
 ];
 
-it(`App correctly renders after relaunch`, () => {
+it(`CitiesList correctly renders`, () => {
   const tree = renderer
     .create(<CitiesList cities={cities} clickHandler={jest.fn()} currentId={0}/>)
     .toJSON();

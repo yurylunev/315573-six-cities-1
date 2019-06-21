@@ -12,7 +12,7 @@ const testOffer = {
   type: `Apartment type 1`
 };
 
-it(`PalceCard correctly renders after relaunch`, () => {
+it(`PlaceCard correctly renders`, () => {
   const tree = renderer
     .create(<PlaceCard offer={testOffer} clickHandler={jest.fn()}/>)
     .toJSON();

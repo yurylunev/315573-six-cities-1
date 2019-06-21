@@ -6,6 +6,7 @@ const allOffers = [
     offersCount: 309,
     offers: [
       {
+        id: 0,
         mark: `Premium`,
         imageURL: `img/apartment-01.jpg`,
         price: 120,
@@ -16,6 +17,7 @@ const allOffers = [
         gps: [52.3909553943508, 4.85309666406198]
       },
       {
+        id: 1,
         mark: ``,
         imageURL: `img/room.jpg`,
         price: 80,
@@ -26,6 +28,7 @@ const allOffers = [
         gps: [52.369553943508, 4.85309666406198]
       },
       {
+        id: 2,
         mark: ``,
         imageURL: `img/apartment-02.jpg`,
         price: 132,
@@ -36,6 +39,7 @@ const allOffers = [
         gps: [52.3909553943508, 4.929309666406198]
       },
       {
+        id: 3,
         mark: `Premium`,
         imageURL: `img/apartment-03.jpg`,
         price: 180,
@@ -54,6 +58,7 @@ const allOffers = [
     offersCount: 310,
     offers: [
       {
+        id: 4,
         mark: `Premium`,
         imageURL: `img/apartment-01.jpg`,
         price: 120,
@@ -64,6 +69,7 @@ const allOffers = [
         gps: [52.3949553953508, 4.84329666406198]
       },
       {
+        id: 5,
         mark: ``,
         imageURL: `img/room.jpg`,
         price: 80,
@@ -74,6 +80,7 @@ const allOffers = [
         gps: [52.362753943508, 4.85329616406198]
       },
       {
+        id: 6,
         mark: ``,
         imageURL: `img/apartment-02.jpg`,
         price: 132,
@@ -84,6 +91,7 @@ const allOffers = [
         gps: [52.3901553943508, 4.929349666406198]
       },
       {
+        id: 7,
         mark: `Premium`,
         imageURL: `img/apartment-03.jpg`,
         price: 180,
@@ -102,6 +110,7 @@ const allOffers = [
     offersCount: 311,
     offers: [
       {
+        id: 8,
         mark: `Premium`,
         imageURL: `img/apartment-01.jpg`,
         price: 120,
@@ -112,6 +121,7 @@ const allOffers = [
         gps: [52.3909553943508, 4.85309666406198]
       },
       {
+        id: 9,
         mark: ``,
         imageURL: `img/room.jpg`,
         price: 80,
@@ -122,6 +132,7 @@ const allOffers = [
         gps: [52.369553943508, 4.85309666406198]
       },
       {
+        id: 10,
         mark: ``,
         imageURL: `img/apartment-02.jpg`,
         price: 132,
@@ -132,6 +143,7 @@ const allOffers = [
         gps: [52.3909553943508, 4.929309666406198]
       },
       {
+        id: 11,
         mark: `Premium`,
         imageURL: `img/apartment-03.jpg`,
         price: 180,
@@ -150,6 +162,7 @@ const allOffers = [
     offersCount: 312,
     offers: [
       {
+        id: 12,
         mark: `Premium`,
         imageURL: `img/apartment-01.jpg`,
         price: 120,
@@ -160,6 +173,7 @@ const allOffers = [
         gps: [52.3909553943508, 4.85309666406198]
       },
       {
+        id: 13,
         mark: ``,
         imageURL: `img/room.jpg`,
         price: 80,
@@ -170,6 +184,7 @@ const allOffers = [
         gps: [52.369553943508, 4.85309666406198]
       },
       {
+        id: 14,
         mark: ``,
         imageURL: `img/apartment-02.jpg`,
         price: 132,
@@ -180,6 +195,7 @@ const allOffers = [
         gps: [52.3909553943508, 4.929309666406198]
       },
       {
+        id: 15,
         mark: `Premium`,
         imageURL: `img/apartment-03.jpg`,
         price: 180,
@@ -198,6 +214,7 @@ const allOffers = [
     offersCount: 313,
     offers: [
       {
+        id: 16,
         mark: `Premium`,
         imageURL: `img/apartment-01.jpg`,
         price: 120,
@@ -208,6 +225,7 @@ const allOffers = [
         gps: [52.3909553943508, 4.85309666406198]
       },
       {
+        id: 17,
         mark: ``,
         imageURL: `img/room.jpg`,
         price: 80,
@@ -218,6 +236,7 @@ const allOffers = [
         gps: [52.369553943508, 4.85309666406198]
       },
       {
+        id: 18,
         mark: ``,
         imageURL: `img/apartment-02.jpg`,
         price: 132,
@@ -228,6 +247,7 @@ const allOffers = [
         gps: [52.3909553943508, 4.929309666406198]
       },
       {
+        id: 19,
         mark: `Premium`,
         imageURL: `img/apartment-03.jpg`,
         price: 180,
@@ -246,6 +266,7 @@ const allOffers = [
     offersCount: 314,
     offers: [
       {
+        id: 20,
         mark: `Premium`,
         imageURL: `img/apartment-01.jpg`,
         price: 120,
@@ -256,6 +277,7 @@ const allOffers = [
         gps: [52.3909553943508, 4.85309666406198]
       },
       {
+        id: 21,
         mark: ``,
         imageURL: `img/room.jpg`,
         price: 80,
@@ -266,6 +288,7 @@ const allOffers = [
         gps: [52.369553943508, 4.85309666406198]
       },
       {
+        id: 22,
         mark: ``,
         imageURL: `img/apartment-02.jpg`,
         price: 132,
@@ -276,6 +299,7 @@ const allOffers = [
         gps: [52.3909553943508, 4.929309666406198]
       },
       {
+        id: 23,
         mark: `Premium`,
         imageURL: `img/apartment-03.jpg`,
         price: 180,

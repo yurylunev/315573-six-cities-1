@@ -6,6 +6,7 @@ import PlaceCard from "./place-card.jsx";
 Enzyme.configure({adapter: new Adapter()});
 
 const testOffer = {
+  id: 0,
   mark: `offerMark1`,
   imageURL: `imageURL`,
   price: 1000,
@@ -15,18 +16,18 @@ const testOffer = {
   type: `Apartment type 1`
 };
 
-let activeCard = {};
+let placeCardId = {};
 
 it(`PlaceCard image click handler work`, () => {
   const placeCard = mount(<PlaceCard
     offer={testOffer}
     clickHandler={(res) => {
-      activeCard = Object.assign({}, res);
+      placeCardId = res;
     }}
   />);
 
   const imageWrapper = placeCard.find(`.place-card__image-wrapper`);
   imageWrapper.find(`a`).simulate(`click`);
 
-  expect(testOffer).toEqual(activeCard);
+  expect(testOffer.id).toEqual(placeCardId);
 });
