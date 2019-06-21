@@ -15,7 +15,6 @@ exports[`PlaceCard correctly renders 1`] = `
     className="cities__image-wrapper place-card__image-wrapper"
   >
     <a
-      href="#"
       onClick={[Function]}
     >
       <img
@@ -92,7 +91,6 @@ exports[`PlaceCard correctly renders 1`] = `
       className="place-card__name"
     >
       <a
-        href="#"
         onClick={[Function]}
       >
         Name of offer 1

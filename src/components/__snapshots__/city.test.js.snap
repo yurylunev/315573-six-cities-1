@@ -7,7 +7,6 @@ exports[`CitiesList correctly renders 1`] = `
 >
   <a
     className="locations__item-link tabs__item tabs__item--active"
-    href="#"
   >
     <span />
   </a>

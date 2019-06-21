@@ -77,7 +77,6 @@ Array [
           >
             <a
               className="locations__item-link tabs__item"
-              href="#"
             >
               <span />
             </a>
@@ -88,7 +87,6 @@ Array [
           >
             <a
               className="locations__item-link tabs__item"
-              href="#"
             >
               <span />
             </a>
@@ -188,7 +186,6 @@ Array [
                 className="cities__image-wrapper place-card__image-wrapper"
               >
                 <a
-                  href="#"
                   onClick={[Function]}
                 >
                   <img
@@ -265,7 +262,6 @@ Array [
                   className="place-card__name"
                 >
                   <a
-                    href="#"
                     onClick={[Function]}
                   >
                     mockName1
@@ -292,7 +288,6 @@ Array [
                 className="cities__image-wrapper place-card__image-wrapper"
               >
                 <a
-                  href="#"
                   onClick={[Function]}
                 >
                   <img
@@ -369,7 +364,6 @@ Array [
                   className="place-card__name"
                 >
                   <a
-                    href="#"
                     onClick={[Function]}
                   >
                     mockName2
@@ -389,7 +383,6 @@ Array [
                 className="cities__image-wrapper place-card__image-wrapper"
               >
                 <a
-                  href="#"
                   onClick={[Function]}
                 >
                   <img
@@ -466,7 +459,6 @@ Array [
                   className="place-card__name"
                 >
                   <a
-                    href="#"
                     onClick={[Function]}
                   >
                     mockName3
@@ -493,7 +485,6 @@ Array [
                 className="cities__image-wrapper place-card__image-wrapper"
               >
                 <a
-                  href="#"
                   onClick={[Function]}
                 >
                   <img
@@ -570,7 +561,6 @@ Array [
                   className="place-card__name"
                 >
                   <a
-                    href="#"
                     onClick={[Function]}
                   >
                     mockName4
