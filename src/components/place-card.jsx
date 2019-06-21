@@ -4,7 +4,7 @@ import withActiveCard from "../hocs/with-active-card/with-active-card";
 
 const PlaceCard = (props) => {
   const {offer, clickHandler, activeClassName} = props;
-  return <article className={`cities__place-card place-card${activeClassName}`}>
+  return <article className={`cities__place-card place-card${activeClassName ? ` place-card--${activeClassName}` : ``}`}>
     {(offer.mark)
       ? <div className="place-card__mark">
         <span>{offer.mark}</span>

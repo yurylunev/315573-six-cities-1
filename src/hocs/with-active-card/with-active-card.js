@@ -10,10 +10,9 @@ const withActiveCard = (Component) => {
     render() {
       const {city, currentId, currentPlaceId, offer} = this.props;
       let activeClassName = ``;
-      if ((typeof city !== `undefined`) && currentId === city.id) {
-        activeClassName = ` tabs__item--active`;
-      } else if ((typeof offer !== `undefined`) && currentPlaceId === offer.id) {
-        activeClassName = ` place-card--active`;
+      if (((typeof city !== `undefined`) && currentId === city.id)
+        || ((typeof offer !== `undefined`) && currentPlaceId === offer.id)) {
+        activeClassName = `active`;
       }
       return <Component
         {...this.props}

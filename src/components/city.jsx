@@ -6,7 +6,7 @@ const City = ({city, clickHandler, activeClassName}) => {
   return <li key={city.id} className={`locations__item`}
     onClick={() => clickHandler(city.id)}>
     <a className={
-      `locations__item-link tabs__item${activeClassName}`
+      `locations__item-link tabs__item${activeClassName ? ` tabs__item--${activeClassName}` : ``}`
     } href="#">
       <span>{city.cityName}</span>
     </a>
