@@ -1,5 +1,4 @@
 import {reducer} from "../reducer";
-import allCityOffers from '../mocks/offers';
 
 it(`Should return initial state`, () => {
   expect(reducer(undefined, {}))

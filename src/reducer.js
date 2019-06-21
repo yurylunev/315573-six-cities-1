@@ -1,5 +1,3 @@
-import allCityOffers from './mocks/offers';
-
 const initialState = Object.assign({}, {data: allCityOffers, currentId: 0, currentPlaceId: 0});
 
 const ActionCreators = {
