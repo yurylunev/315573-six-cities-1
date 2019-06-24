@@ -15,6 +15,7 @@ const store = createStore(
 
 
 const init = () => {
+  const api = createAPI((...args) => store.dispatch(...args));
   ReactDOM.render(<Provider store={store}>
     <App/>
   </Provider>, document.getElementById(`root`));
