@@ -4,6 +4,7 @@ import PlacesList from "./places-list.jsx";
 
 const testOffers = [
   {
+    id: 0,
     mark: `offerMark1`,
     imageURL: `imageURL`,
     price: 1000,
@@ -14,6 +15,7 @@ const testOffers = [
     gps: [52.369553943508, 4.85309666406198]
   },
   {
+    id: 1,
     mark: `offerMark2`,
     imageURL: `imageURL`,
     price: 2000,
@@ -27,7 +29,7 @@ const testOffers = [
 
 it(`PlacesList correctly renders`, () => {
   const tree = renderer
-    .create(<PlacesList offers={testOffers} clickHandler={jest.fn()}/>)
+    .create(<PlacesList offers={testOffers} clickHandler={jest.fn()} currentPlaceId={0}/>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

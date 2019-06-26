@@ -3,10 +3,10 @@ import renderer from "react-test-renderer";
 import CitiesList from "./cities-list.jsx";
 
 const cities = [
-  `Citie 1`,
-  `Citie 2`,
-  `Citie 3`,
-  `Citie 4`
+  {id: 0, cityName: `Citie 1`},
+  {id: 1, cityName: `Citie 2`},
+  {id: 2, cityName: `Citie 3`},
+  {id: 3, cityName: `Citie 4`}
 ];
 
 it(`CitiesList correctly renders`, () => {

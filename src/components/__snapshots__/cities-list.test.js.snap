@@ -12,9 +12,11 @@ exports[`CitiesList correctly renders 1`] = `
       onClick={[Function]}
     >
       <a
-        className="locations__item-link tabs__item"
+        className="locations__item-link tabs__item tabs__item--active"
       >
-        <span />
+        <span>
+          Citie 1
+        </span>
       </a>
     </li>
     <li
@@ -24,7 +26,9 @@ exports[`CitiesList correctly renders 1`] = `
       <a
         className="locations__item-link tabs__item"
       >
-        <span />
+        <span>
+          Citie 2
+        </span>
       </a>
     </li>
     <li
@@ -34,7 +38,9 @@ exports[`CitiesList correctly renders 1`] = `
       <a
         className="locations__item-link tabs__item"
       >
-        <span />
+        <span>
+          Citie 3
+        </span>
       </a>
     </li>
     <li
@@ -44,7 +50,9 @@ exports[`CitiesList correctly renders 1`] = `
       <a
         className="locations__item-link tabs__item"
       >
-        <span />
+        <span>
+          Citie 4
+        </span>
       </a>
     </li>
   </ul>

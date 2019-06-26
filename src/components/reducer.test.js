@@ -1,8 +1,9 @@
 import {reducer} from "../reducer";
 
+
 it(`Should return initial state`, () => {
   expect(reducer(undefined, {}))
-    .toEqual(Object.assign({}, {data: allCityOffers, currentId: 0, currentPlaceId: 0}));
+    .toEqual(Object.assign({}, {data: [], currentPlaceId: 0}));
 });
 
 it(`Should change city`, () => {
@@ -16,9 +17,9 @@ it(`Should change city`, () => {
 });
 
 it(`Should get offers`, () => {
-  expect(reducer({data: allCityOffers}, {
-    type: `GET_CITY_OFFERS`,
-    payload: 0
+  expect(reducer({}, {
+    type: `LOAD_OFFERS`,
+    payload: [{fake: true}]
   }))
-    .toEqual(allCityOffers[0]);
+    .toMatchObject({"data": [{"fake": true}]});
 });

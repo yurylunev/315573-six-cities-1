@@ -76,9 +76,11 @@ Array [
             onClick={[Function]}
           >
             <a
-              className="locations__item-link tabs__item"
+              className="locations__item-link tabs__item tabs__item--active"
             >
-              <span />
+              <span>
+                Name1
+              </span>
             </a>
           </li>
           <li
@@ -86,9 +88,11 @@ Array [
             onClick={[Function]}
           >
             <a
-              className="locations__item-link tabs__item"
+              className="locations__item-link tabs__item tabs__item--active"
             >
-              <span />
+              <span>
+                Name2
+              </span>
             </a>
           </li>
         </ul>
@@ -111,7 +115,7 @@ Array [
           <b
             className="places__found"
           >
-            0
+            4
              places to stay in 
             Name1
           </b>
@@ -175,13 +179,6 @@ Array [
             <article
               className="cities__place-card place-card place-card--active"
             >
-              <div
-                className="place-card__mark"
-              >
-                <span>
-                  mark
-                </span>
-              </div>
               <div
                 className="cities__image-wrapper place-card__image-wrapper"
               >
@@ -275,15 +272,8 @@ Array [
               </div>
             </article>
             <article
-              className="cities__place-card place-card place-card--active"
+              className="cities__place-card place-card"
             >
-              <div
-                className="place-card__mark"
-              >
-                <span>
-                  mark
-                </span>
-              </div>
               <div
                 className="cities__image-wrapper place-card__image-wrapper"
               >
@@ -377,7 +367,7 @@ Array [
               </div>
             </article>
             <article
-              className="cities__place-card place-card place-card--active"
+              className="cities__place-card place-card"
             >
               <div
                 className="cities__image-wrapper place-card__image-wrapper"
@@ -472,15 +462,8 @@ Array [
               </div>
             </article>
             <article
-              className="cities__place-card place-card place-card--active"
+              className="cities__place-card place-card"
             >
-              <div
-                className="place-card__mark"
-              >
-                <span>
-                  mark
-                </span>
-              </div>
               <div
                 className="cities__image-wrapper place-card__image-wrapper"
               >

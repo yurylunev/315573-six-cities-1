@@ -13,7 +13,8 @@ const testOffer = {
   currency: `€`,
   rate: 100,
   name: `Name of offer 1`,
-  type: `Apartment type 1`
+  type: `Apartment type 1`,
+  currentPlaceId: 1
 };
 
 let placeCardId = {};
@@ -24,6 +25,7 @@ it(`PlaceCard image click handler work`, () => {
     clickHandler={(res) => {
       placeCardId = res;
     }}
+    currentPlaceId={0}
   />);
 
   const imageWrapper = placeCard.find(`.place-card__image-wrapper`);
