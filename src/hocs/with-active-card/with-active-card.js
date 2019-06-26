@@ -23,7 +23,7 @@ const withActiveCard = (Component) => {
 
   WithActiveCard.propTypes = {
     city: PropTypes.shape({
-      id: PropTypes.number.isRequired
+      id: PropTypes.number
     }),
     offer: PropTypes.shape({
       id: PropTypes.number.isRequired

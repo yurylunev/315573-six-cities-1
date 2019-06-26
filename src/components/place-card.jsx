@@ -5,9 +5,9 @@ import withActiveCard from "../hocs/with-active-card/with-active-card";
 const PlaceCard = (props) => {
   const {offer, clickHandler, activeClassName} = props;
   return <article className={`cities__place-card place-card${activeClassName ? ` place-card--${activeClassName}` : ``}`}>
-    {(offer.mark)
+    {(offer.isPremium)
       ? <div className="place-card__mark">
-        <span>{offer.mark}</span>
+        <span>Premium</span>
       </div>
       : null
     }
@@ -45,7 +45,7 @@ const PlaceCard = (props) => {
 
 PlaceCard.propTypes = {
   offer: PropTypes.shape({
-    mark: PropTypes.string,
+    isPremium: PropTypes.bool,
     imageURL: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     currency: PropTypes.string.isRequired,
