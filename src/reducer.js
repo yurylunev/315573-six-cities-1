@@ -3,7 +3,7 @@ const initialState = Object.assign({}, {
   currentPlaceId: 0
 });
 
-const ActionCreators = {
+const ActionCreator = {
   'CHANGE_CITY': (id) => ({
     type: `CHANGE_CITY`,
     payload: id
@@ -12,12 +12,6 @@ const ActionCreators = {
     type: `CHANGE_PLACE`,
     payload: id
   }),
-  'GET_CITY_OFFERS': (cityId) => {
-    return {
-      type: `GET_CITY_OFFERS`,
-      payload: cityId
-    };
-  },
   'loadOffers': (offers) => {
     return {
       type: `LOAD_OFFERS`,
@@ -80,7 +74,7 @@ const Operation = {
             }
           }
         }
-        dispatch(ActionCreators.loadOffers(cities));
+        dispatch(ActionCreator.loadOffers(cities));
       });
   }
 };
@@ -89,8 +83,6 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case `CHANGE_CITY`:
       return Object.assign({}, state, {currentId: action.payload});
-    case `GET_CITY_OFFERS`:
-      return Object.assign({}, state.data[action.payload]);
     case `CHANGE_PLACE`:
       return Object.assign({}, state, {currentPlaceId: action.payload});
     case `LOAD_OFFERS`:
@@ -99,4 +91,4 @@ const reducer = (state = initialState, action) => {
   return state;
 };
 
-export {reducer, ActionCreators, Operation};
+export {reducer, ActionCreator, Operation};
