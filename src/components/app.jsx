@@ -4,7 +4,7 @@ import PlacesList from "./places-list.jsx";
 import CitiesMap from "./map.jsx";
 import CitiesList from "./cities-list.jsx";
 import {connect} from "react-redux";
-import {ActionCreators, Operation} from "../reducer";
+import {ActionCreator, Operation} from "../reducer";
 
 export class App extends React.PureComponent {
   constructor(props) {
@@ -114,10 +114,10 @@ const mapStateToProps = (state) => Object.assign({}, state, {
 });
 const mapDispatchToProps = (dispatch) => ({
   onCityChange: (props) => {
-    dispatch(ActionCreators[`CHANGE_CITY`](props));
+    dispatch(ActionCreator[`CHANGE_CITY`](props));
   },
   onPlaceChange: (props) => {
-    dispatch(ActionCreators[`CHANGE_PLACE`](props));
+    dispatch(ActionCreator[`CHANGE_PLACE`](props));
   },
   loadOffersAsync: (props) => dispatch(Operation.loadOffersAsync(props))
 });
