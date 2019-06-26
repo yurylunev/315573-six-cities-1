@@ -59,7 +59,7 @@ const Operation = {
         let cityOffers = [];
         for (let i = 0; i < sortedOffers.length - 1; i++) {
           if (sortedOffers.hasOwnProperty(i)) {
-            if (i !== sortedOffers.length - 1) {
+            if (i + 1 !== sortedOffers.length - 1) {
               const offer = sortedOffers[i];
               cityOffers.push(mapOffer(offer));
               if (offer.city.name !== sortedOffers[i + 1].city.name) {
