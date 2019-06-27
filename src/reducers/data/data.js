@@ -1,20 +1,15 @@
 const initialState = Object.assign({}, {
-  data: [],
-  currentPlaceId: 0
+  data: []
 });
 
+const ActionType = {
+  LOAD_OFFERS: `LOAD_OFFERS`
+};
+
 const ActionCreator = {
-  'CHANGE_CITY': (id) => ({
-    type: `CHANGE_CITY`,
-    payload: id
-  }),
-  'CHANGE_PLACE': (id) => ({
-    type: `CHANGE_PLACE`,
-    payload: id
-  }),
   'loadOffers': (offers) => {
     return {
-      type: `LOAD_OFFERS`,
+      type: ActionType.LOAD_OFFERS,
       payload: offers
     };
   }
@@ -80,13 +75,8 @@ const Operation = {
 };
 
 const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case `CHANGE_CITY`:
-      return Object.assign({}, state, {currentId: action.payload});
-    case `CHANGE_PLACE`:
-      return Object.assign({}, state, {currentPlaceId: action.payload});
-    case `LOAD_OFFERS`:
-      return Object.assign({}, state, {data: action.payload, currentId: action.payload[0].id});
+  if (action.type === ActionType.LOAD_OFFERS) {
+    return Object.assign({}, state, {data: action.payload, loaded: true});
   }
   return state;
 };

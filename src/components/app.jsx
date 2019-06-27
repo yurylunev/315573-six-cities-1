@@ -4,12 +4,12 @@ import PlacesList from "./places-list.jsx";
 import CitiesMap from "./map.jsx";
 import CitiesList from "./cities-list.jsx";
 import {connect} from "react-redux";
-import {ActionCreator, Operation} from "../reducer";
+import {Operation as DataOperation} from "../reducers/data/data";
+import {ActionCreator as AppActionCreator} from "../reducers/app/app";
 
 export class App extends React.PureComponent {
   constructor(props) {
     super(props);
-    // this.currentCity = props.data[props.currentId];
     this.props = props;
   }
 
@@ -18,10 +18,10 @@ export class App extends React.PureComponent {
   }
 
   render() {
-    if (typeof this.props.currentId === `undefined`) {
+    if (typeof this.props.DATA.loaded === `undefined`) {
       return <h1>Loading ... </h1>;
     }
-    const currentCity = this.props.data.filter((city) => city.id === this.props.currentId)[0];
+    const currentCity = this.props.DATA.data.filter((city) => city.id === this.props.APP.currentId)[0];
     return <React.Fragment>
       <header className="header">
         <div className="container">
@@ -50,7 +50,7 @@ export class App extends React.PureComponent {
         <h1 className="visually-hidden">Cities</h1>
         <div className="cities tabs">
           <CitiesList cities={this.props.cities} clickHandler={this.props.onCityChange}
-            currentId={this.props.currentId}/>
+            currentId={this.props.APP.currentId}/>
         </div>
         <div className="cities__places-wrapper">
           <div className="cities__places-container container">
@@ -73,13 +73,13 @@ export class App extends React.PureComponent {
                 </ul>
               </form>
               <PlacesList offers={currentCity.offers} clickHandler={this.props.onPlaceChange}
-                currentPlaceId={this.props.currentPlaceId}/>
+                currentPlaceId={this.props.APP.currentPlaceId}/>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map">
                 <CitiesMap
-                  key={this.props.currentId}
-                  currentId={this.props.currentId}
+                  key={this.props.APP.currentId}
+                  currentId={this.props.APP.currentId}
                   currentCityGPS={currentCity.gps}
                   offers={currentCity.offers}/>
               </section>
@@ -93,13 +93,17 @@ export class App extends React.PureComponent {
 }
 
 App.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    cityName: PropTypes.string.isRequired,
-    offersCount: PropTypes.number.isRequired,
-    offers: PropTypes.array.isRequired
-  })),
-  currentId: PropTypes.number,
-  currentPlaceId: PropTypes.number.isRequired,
+  APP: PropTypes.shape({
+    currentId: PropTypes.number,
+    currentPlaceId: PropTypes.number,
+  }),
+  DATA: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.shape({
+      cityName: PropTypes.string.isRequired,
+      offers: PropTypes.array.isRequired
+    })),
+    loaded: PropTypes.bool
+  }),
   cities: PropTypes.array.isRequired,
   onCityChange: PropTypes.func.isRequired,
   onPlaceChange: PropTypes.func.isRequired,
@@ -107,19 +111,19 @@ App.propTypes = {
 };
 
 const mapStateToProps = (state) => Object.assign({}, state, {
-  cities: state.data.map((city) => ({
+  cities: state.DATA.data.map((city) => ({
     id: city.id,
     cityName: city.cityName
   }))
 });
 const mapDispatchToProps = (dispatch) => ({
   onCityChange: (props) => {
-    dispatch(ActionCreator[`CHANGE_CITY`](props));
+    dispatch(AppActionCreator[`CHANGE_CITY`](props));
   },
   onPlaceChange: (props) => {
-    dispatch(ActionCreator[`CHANGE_PLACE`](props));
+    dispatch(AppActionCreator[`CHANGE_PLACE`](props));
   },
-  loadOffersAsync: (props) => dispatch(Operation.loadOffersAsync(props))
+  loadOffersAsync: (props) => dispatch(DataOperation.loadOffersAsync(props))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
