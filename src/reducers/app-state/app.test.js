@@ -1,4 +1,4 @@
-import {reducer} from "./app";
+import {reducer} from "./app-state";
 
 
 it(`Should return initial state`, () => {

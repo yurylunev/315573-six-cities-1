@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import withActiveCard from "../hocs/with-active-card/with-active-card";
+import {connect} from "react-redux";
+import {ActionCreator as AppActionCreator} from "../reducers/app-state/app-state";
 
 const PlaceCard = (props) => {
-  const {offer, clickHandler, activeClassName} = props;
+  const {offer, onPlaceChange, activeClassName} = props;
   return <article className={`cities__place-card place-card${activeClassName ? ` place-card--${activeClassName}` : ``}`}>
     {(offer.isPremium)
       ? <div className="place-card__mark">
@@ -12,7 +14,7 @@ const PlaceCard = (props) => {
       : null
     }
     <div className="cities__image-wrapper place-card__image-wrapper">
-      <a onClick={() => clickHandler(offer.id)}>
+      <a onClick={() => onPlaceChange(offer.id)}>
         <img className="place-card__image" src={offer.imageURL} width="260" height="200" alt="Place image"/>
       </a>
     </div>
@@ -36,7 +38,7 @@ const PlaceCard = (props) => {
         </div>
       </div>
       <h2 className="place-card__name">
-        <a onClick={() => clickHandler(offer.id)}>{offer.name}</a>
+        <a onClick={() => onPlaceChange(offer.id)}>{offer.name}</a>
       </h2>
       <p className="place-card__type">{offer.type}</p>
     </div>
@@ -54,8 +56,14 @@ PlaceCard.propTypes = {
     type: PropTypes.string.isRequired
   }),
   activeClassName: PropTypes.string.isRequired,
-  clickHandler: PropTypes.func.isRequired,
+  onPlaceChange: PropTypes.func.isRequired,
   currentPlaceId: PropTypes.number.isRequired
 };
 
-export default withActiveCard(PlaceCard);
+const mapDispatchToProps = (dispatch) => ({
+  onPlaceChange: (placeId) => {
+    dispatch(AppActionCreator[`CHANGE_PLACE`](placeId));
+  }
+});
+
+export default connect(null, mapDispatchToProps)(withActiveCard(PlaceCard));

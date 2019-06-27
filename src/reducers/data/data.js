@@ -12,6 +12,9 @@ const ActionCreator = {
       type: ActionType.LOAD_OFFERS,
       payload: offers
     };
+  },
+  'requireAuthorization': (auth) => {
+    return auth;
   }
 };
 
