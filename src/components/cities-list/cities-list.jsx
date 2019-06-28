@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import City from "./city.jsx";
-import {ActionCreator as AppActionCreator} from "../reducers/app-state/app-state";
-import {getCitiesList} from "../reducers/selectors";
+import City from "../city/city.jsx";
+import {ActionCreator as AppActionCreator} from "../../reducers/app-state/app-state";
+import {getCitiesList} from "../../reducers/selectors";
 
 export const CitiesList = (props) => {
   const {cities, currentId} = props;

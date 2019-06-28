@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import withActiveCard from "../hocs/with-active-card/with-active-card";
+import withActiveCard from "../../hocs/with-active-card/with-active-card";
 import {connect} from "react-redux";
-import {ActionCreator as AppActionCreator} from "../reducers/app-state/app-state";
+import {ActionCreator as AppActionCreator} from "../../reducers/app-state/app-state";
 
 export const PlaceCard = (props) => {
   const {offer, onPlaceChange, activeClassName} = props;

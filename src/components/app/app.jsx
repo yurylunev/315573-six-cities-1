@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PlacesList from "./places-list.jsx";
-import CitiesMap from "./cities-map.jsx";
-import CitiesList from "./cities-list.jsx";
+import PlacesList from "../places-list/places-list.jsx";
+import CitiesMap from "../cities-map/cities-map.jsx";
+import CitiesList from "../cities-list/cities-list.jsx";
 import {connect} from "react-redux";
-import {Operation as DataOperation} from "../reducers/data/data";
-import {getCurrentCity} from "../reducers/selectors";
+import {Operation as DataOperation} from "../../reducers/data/data";
+import {getCurrentCity} from "../../reducers/selectors";
 
 export class App extends React.PureComponent {
   constructor(props) {

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import leaflet from "leaflet";
 import {connect} from "react-redux";
-import {getCurrentCity} from "../reducers/selectors";
+import {getCurrentCity} from "../../reducers/selectors";
 
 export class CitiesMap extends React.PureComponent {
   constructor(props) {
