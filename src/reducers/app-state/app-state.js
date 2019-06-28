@@ -1,5 +1,3 @@
-import {getCurrentCityOffers} from "../data/selectors";
-
 const initialState = Object.assign({}, {
   currentId: 17,
   currentPlaceId: 0

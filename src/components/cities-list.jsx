@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import City from "./city.jsx";
 import {ActionCreator as AppActionCreator} from "../reducers/app-state/app-state";
-import {Operation as DataOperation} from "../reducers/data/data";
+import {getCitiesList} from "../reducers/selectors";
 
 const CitiesList = (props) => {
   const {cities, currentId} = props;
@@ -20,7 +20,7 @@ CitiesList.propTypes = {
 };
 const mapStateToProps = (state) => ({
   currentId: state.APP.currentId,
-  cities: state.DATA.data.map((city) => ({id: city.id, cityName: city.cityName}))
+  cities: getCitiesList(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

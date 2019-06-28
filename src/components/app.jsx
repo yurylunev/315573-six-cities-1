@@ -5,6 +5,7 @@ import CitiesMap from "./map.jsx";
 import CitiesList from "./cities-list.jsx";
 import {connect} from "react-redux";
 import {Operation as DataOperation} from "../reducers/data/data";
+import {getCurrentCity} from "../reducers/selectors";
 
 export class App extends React.PureComponent {
   constructor(props) {
@@ -95,7 +96,11 @@ App.propTypes = {
 };
 
 const mapStateToProps = (state) => Object.assign({}, state, {
-  currentCity: state.DATA.data.filter((city) => city.id === state.APP.currentId)[0],
+  currentCity: state.DATA.loaded ? getCurrentCity(state)[0] : {
+    id: 0,
+    cityName: ``,
+    offersCount: 0
+  },
   loaded: state.DATA.loaded
 });
 

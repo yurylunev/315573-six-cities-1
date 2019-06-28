@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import leaflet from "leaflet";
 import {connect} from "react-redux";
+import {getCurrentCity} from "../reducers/selectors";
 
 class CitiesMap extends React.PureComponent {
   constructor(props) {
@@ -60,8 +61,8 @@ CitiesMap.propTypes = {
 
 const mapStateToProps = (state) => ({
   currentId: state.APP.currentId,
-  offers: state.DATA.data.filter((city) => city.id === state.APP.currentId)[0].offers,
-  currentCityGPS: state.DATA.data.filter((city) => city.id === state.APP.currentId)[0].gps
+  offers: getCurrentCity(state)[0].offers,
+  currentCityGPS: getCurrentCity(state)[0].gps
 });
 
 export default connect(mapStateToProps)(CitiesMap);

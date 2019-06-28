@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import PlaceCard from "./place-card.jsx";
 import {connect} from "react-redux";
+import {getCurrentCity} from "../reducers/selectors";
 
 class PlacesList extends React.PureComponent {
   constructor(props) {
@@ -29,7 +30,7 @@ PlacesList.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  offers: state.DATA.data.filter((city) => city.id === state.APP.currentId)[0].offers,
+  offers: getCurrentCity(state)[0].offers,
   currentPlaceId: state.APP.currentPlaceId
 });
 
