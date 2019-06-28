@@ -1,9 +1,15 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import PlacesList from "./places-list.jsx";
+import {PlacesList} from "./places-list.jsx";
+import configureMockStore from "redux-mock-store";
+import {Provider} from "react-redux";
+
+const mockStore = configureMockStore();
+const store = mockStore({});
 
 const testOffers = [
   {
+    id: 0,
     mark: `offerMark1`,
     imageURL: `imageURL`,
     price: 1000,
@@ -14,6 +20,7 @@ const testOffers = [
     gps: [52.369553943508, 4.85309666406198]
   },
   {
+    id: 1,
     mark: `offerMark2`,
     imageURL: `imageURL`,
     price: 2000,
@@ -27,7 +34,11 @@ const testOffers = [
 
 it(`PlacesList correctly renders`, () => {
   const tree = renderer
-    .create(<PlacesList offers={testOffers} clickHandler={jest.fn()}/>)
+    .create(<Provider store={store}>
+      <PlacesList
+        offers={testOffers}
+        currentPlaceId={0}
+      /></Provider>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();
