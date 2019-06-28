@@ -4,7 +4,7 @@ import leaflet from "leaflet";
 import {connect} from "react-redux";
 import {getCurrentCity} from "../reducers/selectors";
 
-class CitiesMap extends React.PureComponent {
+export class CitiesMap extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {

@@ -5,7 +5,7 @@ import City from "./city.jsx";
 import {ActionCreator as AppActionCreator} from "../reducers/app-state/app-state";
 import {getCitiesList} from "../reducers/selectors";
 
-const CitiesList = (props) => {
+export const CitiesList = (props) => {
   const {cities, currentId} = props;
   return <section className="locations container">
     <ul className="locations__list tabs__list">

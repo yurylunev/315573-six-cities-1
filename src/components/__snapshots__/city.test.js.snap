@@ -6,7 +6,7 @@ exports[`CitiesList correctly renders 1`] = `
   onClick={[Function]}
 >
   <a
-    className="locations__item-link tabs__item"
+    className="locations__item-link tabs__item tabs__item--activeClassName"
   >
     <span>
       City

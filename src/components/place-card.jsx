@@ -4,7 +4,7 @@ import withActiveCard from "../hocs/with-active-card/with-active-card";
 import {connect} from "react-redux";
 import {ActionCreator as AppActionCreator} from "../reducers/app-state/app-state";
 
-const PlaceCard = (props) => {
+export const PlaceCard = (props) => {
   const {offer, onPlaceChange, activeClassName} = props;
   return <article className={`cities__place-card place-card${activeClassName ? ` place-card--${activeClassName}` : ``}`}>
     {(offer.isPremium)

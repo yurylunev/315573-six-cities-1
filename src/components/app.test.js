@@ -2,19 +2,6 @@ import React from "react";
 import renderer from "react-test-renderer";
 import {App} from "./app.jsx";
 
-jest.mock(`leaflet`, () => ({
-  map: () => ({
-    setView: () => jest.fn()
-  }),
-  tileLayer: () => ({
-    addTo: () => jest.fn()
-  }),
-  icon: () => jest.fn(),
-  marker: () => ({
-    addTo: () => jest.fn()
-  })
-}));
-
 const testOffers = [
   {
     id: 0,
@@ -127,11 +114,10 @@ it(`App correctly renders after relaunch`, () => {
     .create(<App
       DATA={{loaded: false, data: testOffers}}
       APP={{currentId: 0, currentPlaceId: 0, currentCityGPS: [0, 0]}}
-      currentCity={{offers: []}}
+      currentCity={{id: 0, cityName: ``, offersCount: 0, offers: []}}
       onCityChange={jest.fn()}
       loadOffersAsync={jest.fn()}
       onPlaceChange={jest.fn()}
-      clickHandler={jest.fn()}
       cities={testOffers.map((city) => ({id: 0, cityName: city.cityName}))}/>)
     .toJSON();
 

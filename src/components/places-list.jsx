@@ -4,7 +4,7 @@ import PlaceCard from "./place-card.jsx";
 import {connect} from "react-redux";
 import {getCurrentCity} from "../reducers/selectors";
 
-class PlacesList extends React.PureComponent {
+export class PlacesList extends React.PureComponent {
   constructor(props) {
     super(props);
   }

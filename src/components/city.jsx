@@ -4,7 +4,7 @@ import withActiveCard from "../hocs/with-active-card/with-active-card";
 import {ActionCreator as AppActionCreator} from "../reducers/app-state/app-state";
 import {connect} from "react-redux";
 
-const City = ({city, onCityChange, activeClassName}) => {
+export const City = ({city, onCityChange, activeClassName}) => {
   return <li key={city.id} className={`locations__item`}
     onClick={() => onCityChange(city.id)}>
     <a className={

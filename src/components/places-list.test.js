@@ -1,6 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import PlacesList from "./places-list.jsx";
+import {PlacesList} from "./places-list.jsx";
+import configureMockStore from "redux-mock-store";
+import {Provider} from "react-redux";
+
+const mockStore = configureMockStore();
+const store = mockStore({});
 
 const testOffers = [
   {
@@ -29,7 +34,11 @@ const testOffers = [
 
 it(`PlacesList correctly renders`, () => {
   const tree = renderer
-    .create(<PlacesList offers={testOffers} clickHandler={jest.fn()} currentPlaceId={0}/>)
+    .create(<Provider store={store}>
+      <PlacesList
+        offers={testOffers}
+        currentPlaceId={0}
+      /></Provider>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();
