@@ -19,9 +19,9 @@ const ActionCreator = {
     type: ActionType.CHANGE_PLACE,
     payload: id
   }),
-  'UPDATE_AUTHORIZATION': (isAuthorizationRequired) => ({
+  'requireAuthorization': (status) => ({
     type: ActionType.UPDATE_AUTHORIZATION,
-    payload: isAuthorizationRequired
+    payload: status
   })
 };
 
