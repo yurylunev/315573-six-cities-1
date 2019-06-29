@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {ActionCreator} from "../../reducers/app-state/app-state";
 import {connect} from "react-redux";
+import {Operation as UserOperation} from "../../reducers/user/user";
 
 export class SignIn extends React.PureComponent {
   constructor(props) {
@@ -99,21 +99,7 @@ SignIn.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  loginAsync: (props) => {
-    return fetch(`https://es31-server.appspot.com/six-cities/login`, {
-      method: `POST`,
-      headers: {
-        "Content-Type": `application/json`,
-      },
-      body: JSON.stringify({
-        email: props.email,
-        password: props.password
-      })
-    })
-      .then((response) => {
-        dispatch(ActionCreator.requireAuthorization(response.status !== 200));
-      });
-  }
+  loginAsync: (data) => dispatch(UserOperation.loginAsync(data))
 });
 
 export default connect(null, mapDispatchToProps)(SignIn);
