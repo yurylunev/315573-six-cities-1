@@ -14,7 +14,9 @@ export class SignIn extends React.PureComponent {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.loginAsync(this.state);
+    if (this.state.email && this.state.password) {
+      this.props.loginAsync(this.state);
+    }
   }
 
   emailChange(event) {
