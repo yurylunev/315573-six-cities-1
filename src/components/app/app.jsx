@@ -108,7 +108,7 @@ const mapStateToProps = (state) => Object.assign({}, state, {
     offersCount: 0
   },
   loaded: state.DATA.loaded,
-  isAuthorizationRequired: state.APP.isAuthorizationRequired
+  isAuthorizationRequired: state.USER.isAuthorizationRequired
 });
 
 const mapDispatchToProps = (dispatch) => ({

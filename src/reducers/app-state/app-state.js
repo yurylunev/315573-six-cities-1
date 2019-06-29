@@ -1,13 +1,11 @@
 const initialState = Object.assign({}, {
   currentCityId: 0,
-  currentPlaceId: 0,
-  isAuthorizationRequired: false
+  currentPlaceId: 0
 });
 
 const ActionType = {
   CHANGE_CITY: `CHANGE_CITY`,
-  CHANGE_PLACE: `CHANGE_PLACE`,
-  UPDATE_AUTHORIZATION: `UPDATE_AUTHORIZATION`
+  CHANGE_PLACE: `CHANGE_PLACE`
 };
 
 const ActionCreator = {
@@ -18,10 +16,6 @@ const ActionCreator = {
   'CHANGE_PLACE': (id) => ({
     type: ActionType.CHANGE_PLACE,
     payload: id
-  }),
-  'requireAuthorization': (status) => ({
-    type: ActionType.UPDATE_AUTHORIZATION,
-    payload: status
   })
 };
 
@@ -31,8 +25,6 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {currentCityId: action.payload});
     case ActionType.CHANGE_PLACE:
       return Object.assign({}, state, {currentPlaceId: action.payload});
-    case ActionType.UPDATE_AUTHORIZATION:
-      return Object.assign({}, state, {isAuthorizationRequired: action.payload});
   }
   return state;
 };
