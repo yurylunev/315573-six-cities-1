@@ -96,7 +96,7 @@ App.propTypes = {
 };
 
 const mapStateToProps = (state) => Object.assign({}, state, {
-  currentCity: state.DATA.loaded ? getCurrentCity(state)[0] : {
+  currentCity: state.DATA.loaded ? getCurrentCity(state) : {
     id: 0,
     cityName: ``,
     offersCount: 0

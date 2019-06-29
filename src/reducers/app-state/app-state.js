@@ -1,5 +1,5 @@
 const initialState = Object.assign({}, {
-  currentCityId: 18,
+  currentCityId: 0,
   currentPlaceId: 0
 });
 

@@ -61,13 +61,13 @@ const Operation = {
               const offer = sortedOffers[i];
               cityOffers.push(mapOffer(offer));
               if (offer.city.name !== sortedOffers[i + 1].city.name) {
-                cities.push(mapCity(offer, cityOffers, i));
+                cities.push(mapCity(offer, cityOffers, cities.length));
                 cityOffers = [];
               }
             } else {
               const offer = sortedOffers[i + 1];
               cityOffers.push(mapOffer(offer));
-              cities.push(mapCity(offer, cityOffers, i));
+              cities.push(mapCity(offer, cityOffers, cities.length));
               cityOffers = [];
             }
           }

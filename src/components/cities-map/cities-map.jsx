@@ -61,8 +61,8 @@ CitiesMap.propTypes = {
 
 const mapStateToProps = (state) => ({
   currentCityId: state.APP.currentCityId,
-  offers: getCurrentCity(state)[0].offers,
-  currentCityGPS: getCurrentCity(state)[0].gps
+  offers: getCurrentCity(state).offers,
+  currentCityGPS: getCurrentCity(state).gps
 });
 
 export default connect(mapStateToProps)(CitiesMap);

@@ -30,7 +30,7 @@ PlacesList.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  offers: getCurrentCity(state)[0].offers,
+  offers: getCurrentCity(state).offers,
   currentPlaceId: state.APP.currentPlaceId
 });
 
