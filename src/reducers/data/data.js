@@ -48,11 +48,10 @@ const mapCity = (offer, cityOffers, i) => ({
 });
 
 const Operation = {
-  loadOffersAsync: () => (dispatch) => {
-    return fetch(`https://es31-server.appspot.com/six-cities/hotels`)
-      .then((response) => response.json())
+  loadOffersAsync: () => (dispatch, _getState, api) => {
+    return api.get(`/hotels`)
       .then((offers) => {
-        const sortedOffers = (offers.sort((a, b) => (a.city.name > b.city.name) ? -1 : 1));
+        const sortedOffers = (offers.data.sort((a, b) => (a.city.name > b.city.name) ? -1 : 1));
         let cities = [];
         let cityOffers = [];
         for (let i = 0; i < sortedOffers.length - 1; i++) {
