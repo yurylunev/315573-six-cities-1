@@ -1,6 +1,7 @@
 const initialState = Object.assign({}, {
   currentCityId: 0,
-  currentPlaceId: 0
+  currentPlaceId: 0,
+  isAuthorizationRequired: false
 });
 
 const ActionType = {
