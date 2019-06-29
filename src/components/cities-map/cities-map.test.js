@@ -116,7 +116,7 @@ const testOffers = [
 
 it(`Map correctly renders`, () => {
   const tree = renderer
-    .create(<CitiesMap offers={testOffers} currentCityGPS={[52.369553943508, 4.85309666406198]} currentId={0}/>)
+    .create(<CitiesMap offers={testOffers} currentCityGPS={[52.369553943508, 4.85309666406198]} currentCityId={0}/>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

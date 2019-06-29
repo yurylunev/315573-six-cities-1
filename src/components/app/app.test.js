@@ -113,7 +113,7 @@ it(`App correctly renders after relaunch`, () => {
   const tree = renderer
     .create(<App
       DATA={{loaded: false, data: testOffers}}
-      APP={{currentId: 0, currentPlaceId: 0, currentCityGPS: [0, 0]}}
+      APP={{currentCityId: 0, currentPlaceId: 0, currentCityGPS: [0, 0]}}
       currentCity={{id: 0, cityName: ``, offersCount: 0, offers: []}}
       onCityChange={jest.fn()}
       loadOffersAsync={jest.fn()}

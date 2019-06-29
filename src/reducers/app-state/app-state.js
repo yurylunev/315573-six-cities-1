@@ -1,5 +1,5 @@
 const initialState = Object.assign({}, {
-  currentId: 17,
+  currentCityId: 18,
   currentPlaceId: 0
 });
 
@@ -22,7 +22,7 @@ const ActionCreator = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.CHANGE_CITY:
-      return Object.assign({}, state, {currentId: action.payload});
+      return Object.assign({}, state, {currentCityId: action.payload});
     case ActionType.CHANGE_PLACE:
       return Object.assign({}, state, {currentPlaceId: action.payload});
   }

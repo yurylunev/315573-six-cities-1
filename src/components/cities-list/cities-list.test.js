@@ -20,7 +20,7 @@ it(`CitiesList correctly renders`, () => {
     .create(<Provider store={store}>
       <CitiesList
         cities={cities}
-        currentId={0}
+        currentCityId={0}
       />
     </Provider>)
     .toJSON();

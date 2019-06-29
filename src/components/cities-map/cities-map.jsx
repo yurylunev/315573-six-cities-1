@@ -10,7 +10,7 @@ export class CitiesMap extends React.PureComponent {
     this.state = {
       currentCityGPS: props.currentCityGPS,
       offers: props.offers,
-      currentId: props.currentId,
+      currentCityId: props.currentCityId,
       layers: []
     };
   }
@@ -56,11 +56,11 @@ export class CitiesMap extends React.PureComponent {
 CitiesMap.propTypes = {
   currentCityGPS: PropTypes.array.isRequired,
   offers: PropTypes.array.isRequired,
-  currentId: PropTypes.number.isRequired
+  currentCityId: PropTypes.number.isRequired
 };
 
 const mapStateToProps = (state) => ({
-  currentId: state.APP.currentId,
+  currentCityId: state.APP.currentCityId,
   offers: getCurrentCity(state)[0].offers,
   currentCityGPS: getCurrentCity(state)[0].gps
 });
