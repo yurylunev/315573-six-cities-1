@@ -1,6 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import {App} from "./app.jsx";
+import configureMockStore from "redux-mock-store";
+import {Provider} from "react-redux";
+
+const mockStore = configureMockStore();
+const store = mockStore({});
 
 const testOffers = [
   {
@@ -111,14 +116,18 @@ const testOffers = [
 
 it(`App correctly renders after relaunch`, () => {
   const tree = renderer
-    .create(<App
-      DATA={{loaded: false, data: testOffers}}
-      APP={{currentCityId: 0, currentPlaceId: 0, currentCityGPS: [0, 0]}}
-      currentCity={{id: 0, cityName: ``, offersCount: 0, offers: []}}
-      onCityChange={jest.fn()}
-      loadOffersAsync={jest.fn()}
-      onPlaceChange={jest.fn()}
-      cities={testOffers.map((city) => ({id: 0, cityName: city.cityName}))}/>)
+    .create(<Provider store={store}>
+      <App
+        DATA={{loaded: false, data: testOffers}}
+        APP={{currentCityId: 0, currentPlaceId: 0, currentCityGPS: [0, 0]}}
+        currentCity={{id: 0, cityName: ``, offersCount: 0, offers: []}}
+        onCityChange={jest.fn()}
+        loadOffersAsync={jest.fn()}
+        onPlaceChange={jest.fn()}
+        isAuthorizationRequired={false}
+        requireAuthorization={jest.fn()}
+        cities={testOffers.map((city) => ({id: 0, cityName: city.cityName}))}/>
+    </Provider>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

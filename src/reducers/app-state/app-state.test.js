@@ -3,7 +3,7 @@ import {reducer} from "./app-state";
 
 it(`Should return initial state`, () => {
   expect(reducer(undefined, {}))
-    .toEqual(Object.assign({}, {currentCityId: 17, currentPlaceId: 0}));
+    .toEqual(Object.assign({}, {currentCityId: 0, currentPlaceId: 0}));
 });
 
 it(`Should change city`, () => {
