@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import PlacesList from "../places-list/places-list.jsx";
 import CitiesMap from "../cities-map/cities-map.jsx";
 import CitiesList from "../cities-list/cities-list.jsx";
+import SignIn from "../sign-in/sign-in.jsx";
 import {connect} from "react-redux";
 import {Operation as DataOperation} from "../../reducers/data/data";
+import {Operation as UserOperation} from "../../reducers/user/user";
 import {getCurrentCity} from "../../reducers/selectors";
-import SignIn from "../sign-in/sign-in.jsx";
 
 export class App extends React.PureComponent {
   constructor(props) {
@@ -37,10 +38,13 @@ export class App extends React.PureComponent {
               <nav className="header__nav">
                 <ul className="header__nav-list">
                   <li className="header__nav-item user">
-                    <a className="header__nav-link header__nav-link--profile" href="#">
-                      <div className="header__avatar-wrapper user__avatar-wrapper">
+                    <a className="header__nav-link header__nav-link--profile"
+                      onClick={(!this.props.userName) ? () => this.props.requireAuthorization() : null}>
+                      <div className="header__avatar-wrapper user__avatar-wrapper"
+                        style={(this.props.userName) ? {backgroundImage: `url(../img/avatar-max.jpg)`} : null}>
                       </div>
-                      <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
+                      <span
+                        className="header__user-name user__name">{(this.props.userName) ? this.props.userName : `Sign In`}</span>
                     </a>
                   </li>
                 </ul>
@@ -98,7 +102,9 @@ App.propTypes = {
     offersCount: PropTypes.number.isRequired
   }),
   loadOffersAsync: PropTypes.func.isRequired,
-  isAuthorizationRequired: PropTypes.bool.isRequired
+  isAuthorizationRequired: PropTypes.bool.isRequired,
+  userName: PropTypes.string,
+  requireAuthorization: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => Object.assign({}, state, {
@@ -108,11 +114,13 @@ const mapStateToProps = (state) => Object.assign({}, state, {
     offersCount: 0
   },
   loaded: state.DATA.loaded,
-  isAuthorizationRequired: state.USER.isAuthorizationRequired
+  isAuthorizationRequired: state.USER.isAuthorizationRequired,
+  userName: state.USER.email
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  loadOffersAsync: (props) => dispatch(DataOperation.loadOffersAsync(props))
+  loadOffersAsync: (props) => dispatch(DataOperation.loadOffersAsync(props)),
+  requireAuthorization: () => dispatch(UserOperation.requireAuthorization()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

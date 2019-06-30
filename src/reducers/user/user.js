@@ -1,5 +1,5 @@
 const initialState = Object.assign({}, {
-  isAuthorizationRequired: true
+  isAuthorizationRequired: false
 });
 
 const ActionType = {
@@ -27,7 +27,8 @@ const Operation = {
           dispatch(ActionCreator.saveUserInfo(response.data));
         }
       });
-  }
+  },
+  requireAuthorization: () => (dispatch) => dispatch(ActionCreator.requireAuthorization(true))
 };
 
 const reducer = (state = initialState, action) => {
