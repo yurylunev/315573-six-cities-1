@@ -1,6 +1,5 @@
 import {reducer} from "./user";
 
-
 it(`Should return initial state`, () => {
   expect(reducer(undefined, {}))
     .toEqual(Object.assign({}, {isAuthorizationRequired: false}));
@@ -13,6 +12,16 @@ it(`Should update authorization`, () => {
   }))
     .toEqual({
       isAuthorizationRequired: true
+    });
+});
+
+it(`Should to show authorization error`, () => {
+  expect(reducer({}, {
+    type: `AUTHORIZATION_ERROR`,
+    payload: `error`
+  }))
+    .toEqual({
+      authorizationError: `error`
     });
 });
 

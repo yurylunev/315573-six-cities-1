@@ -4,6 +4,7 @@ const initialState = Object.assign({}, {
 
 const ActionType = {
   UPDATE_AUTHORIZATION: `UPDATE_AUTHORIZATION`,
+  AUTHORIZATION_ERROR: `AUTHORIZATION_ERROR`,
   UPDATE_USER_INFO: `UPDATE_USER_INFO`
 };
 
@@ -11,6 +12,10 @@ const ActionCreator = {
   'requireAuthorization': (status) => ({
     type: ActionType.UPDATE_AUTHORIZATION,
     payload: status
+  }),
+  'authorizationError': (error) => ({
+    type: ActionType.AUTHORIZATION_ERROR,
+    payload: error
   }),
   'saveUserInfo': (info) => ({
     type: ActionType.UPDATE_USER_INFO,
@@ -35,6 +40,8 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.UPDATE_AUTHORIZATION:
       return Object.assign({}, state, {isAuthorizationRequired: action.payload});
+    case ActionType.AUTHORIZATION_ERROR:
+      return Object.assign({}, state, {authorizationError: action.payload});
     case ActionType.UPDATE_USER_INFO:
       return Object.assign({}, state, {
         id: action.payload.id,

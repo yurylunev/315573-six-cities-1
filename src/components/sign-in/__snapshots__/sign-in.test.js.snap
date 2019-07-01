@@ -117,6 +117,20 @@ Array [
           >
             Sign in
           </button>
+          <div
+            style={
+              Object {
+                "backgroundColor": "lightpink",
+                "border": "1px solid red",
+                "borderRadius": "3px",
+                "color": "red",
+                "marginTop": "20px",
+                "padding": "16px",
+              }
+            }
+          >
+            error
+          </div>
         </form>
       </section>
       <section

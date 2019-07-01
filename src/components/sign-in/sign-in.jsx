@@ -81,6 +81,14 @@ export class SignIn extends React.PureComponent {
                 />
               </div>
               <button className="login__submit form__submit button" type="submit">Sign in</button>
+              {(this.props.authorizationError) ? <div style={{
+                marginTop: `20px`,
+                padding: `16px`,
+                color: `red`,
+                border: `1px solid red`,
+                backgroundColor: `lightpink`,
+                borderRadius: `3px`
+              }}>{this.props.authorizationError}</div> : ``}
             </form>
           </section>
           <section className="locations locations--login locations--current">
@@ -97,11 +105,16 @@ export class SignIn extends React.PureComponent {
 }
 
 SignIn.propTypes = {
-  loginAsync: PropTypes.func.isRequired
+  loginAsync: PropTypes.func.isRequired,
+  authorizationError: PropTypes.string
 };
+
+const mapStateToProps = (state) => ({
+  authorizationError: state.USER.authorizationError,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   loginAsync: (data) => dispatch(UserOperation.loginAsync(data))
 });
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
