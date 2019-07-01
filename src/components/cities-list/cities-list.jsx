@@ -1,25 +1,25 @@
 import React from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import City from "./city.jsx";
-import {ActionCreator as AppActionCreator} from "../reducers/app-state/app-state";
-import {getCitiesList} from "../reducers/selectors";
+import City from "../city/city.jsx";
+import {ActionCreator as AppActionCreator} from "../../reducers/app-state/app-state";
+import {getCitiesList} from "../../reducers/selectors";
 
 export const CitiesList = (props) => {
-  const {cities, currentId} = props;
+  const {cities, currentCityId} = props;
   return <section className="locations container">
     <ul className="locations__list tabs__list">
-      {cities.map((city, i) => <City city={city} currentId={currentId} key={i}/>)}
+      {cities.map((city, i) => <City city={city} currentCityId={currentCityId} key={i}/>)}
     </ul>
   </section>;
 };
 
 CitiesList.propTypes = {
   cities: PropTypes.array.isRequired,
-  currentId: PropTypes.number.isRequired,
+  currentCityId: PropTypes.number.isRequired,
 };
 const mapStateToProps = (state) => ({
-  currentId: state.APP.currentId,
+  currentCityId: state.APP.currentCityId,
   cities: getCitiesList(state)
 });
 

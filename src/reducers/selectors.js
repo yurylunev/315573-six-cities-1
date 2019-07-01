@@ -3,11 +3,14 @@ import NameSpace from "./name-space";
 
 const {DATA, APP} = NameSpace;
 
-const allOffers = (state) => ({offers: state[DATA].data, currentCityId: state[APP].currentId});
+const allOffers = (state) => ({
+  offers: state[DATA].data,
+  currentCityId: state[APP].currentCityId
+});
 
 const getCurrentCity = createSelector(
     allOffers,
-    ({offers, currentCityId}) => offers.filter((city) => city.id === currentCityId)
+    ({offers, currentCityId}) => offers[currentCityId]
 );
 const getCitiesList = createSelector(
     allOffers,

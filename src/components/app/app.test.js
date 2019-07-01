@@ -1,19 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import {CitiesMap} from "./cities-map.jsx";
+import {App} from "./app.jsx";
+import configureMockStore from "redux-mock-store";
+import {Provider} from "react-redux";
 
-jest.mock(`leaflet`, () => ({
-  map: () => ({
-    setView: () => jest.fn()
-  }),
-  tileLayer: () => ({
-    addTo: () => jest.fn()
-  }),
-  icon: () => jest.fn(),
-  marker: () => ({
-    addTo: () => jest.fn()
-  })
-}));
+const mockStore = configureMockStore();
+const store = mockStore({});
 
 const testOffers = [
   {
@@ -23,6 +15,7 @@ const testOffers = [
     offersCount: 0,
     offers: [
       {
+        id: 0,
         mark: `mark`,
         imageURL: `imageURL`,
         price: 9,
@@ -33,6 +26,7 @@ const testOffers = [
         gps: [0, 0]
       },
       {
+        id: 1,
         mark: `mark`,
         imageURL: `imageURL`,
         price: 9,
@@ -43,6 +37,7 @@ const testOffers = [
         gps: [0, 0]
       },
       {
+        id: 2,
         mark: ``,
         imageURL: `imageURL`,
         price: 9,
@@ -53,6 +48,7 @@ const testOffers = [
         gps: [0, 0]
       },
       {
+        id: 3,
         mark: `mark`,
         imageURL: `imageURL`,
         price: -9,
@@ -71,6 +67,7 @@ const testOffers = [
     offersCount: 999,
     offers: [
       {
+        id: 4,
         mark: `mark`,
         imageURL: `imageURL`,
         price: 9,
@@ -81,6 +78,7 @@ const testOffers = [
         gps: [999, 999]
       },
       {
+        id: 5,
         mark: `mark`,
         imageURL: `imageURL`,
         price: 9,
@@ -91,6 +89,7 @@ const testOffers = [
         gps: [0, 0]
       },
       {
+        id: 6,
         mark: ``,
         imageURL: `imageURL`,
         price: 9,
@@ -101,6 +100,7 @@ const testOffers = [
         gps: [0, 0]
       },
       {
+        id: 7,
         mark: `mark`,
         imageURL: `imageURL`,
         price: -9,
@@ -114,10 +114,22 @@ const testOffers = [
   }
 ];
 
-it(`Map correctly renders`, () => {
+it(`App correctly renders after relaunch`, () => {
   const tree = renderer
-    .create(<CitiesMap offers={testOffers} currentCityGPS={[52.369553943508, 4.85309666406198]} currentId={0}/>)
+    .create(<Provider store={store}>
+      <App
+        DATA={{loaded: false, data: testOffers}}
+        APP={{currentCityId: 0, currentPlaceId: 0, currentCityGPS: [0, 0]}}
+        currentCity={{id: 0, cityName: ``, offersCount: 0, offers: []}}
+        onCityChange={jest.fn()}
+        loadOffersAsync={jest.fn()}
+        onPlaceChange={jest.fn()}
+        isAuthorizationRequired={false}
+        requireAuthorization={jest.fn()}
+        cities={testOffers.map((city) => ({id: 0, cityName: city.cityName}))}/>
+    </Provider>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();
 });
+

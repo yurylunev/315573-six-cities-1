@@ -8,9 +8,9 @@ const withActiveCard = (Component) => {
     }
 
     render() {
-      const {city, currentId, currentPlaceId, offer} = this.props;
+      const {city, currentCityId, currentPlaceId, offer} = this.props;
       let activeClassName = ``;
-      if (((typeof city !== `undefined`) && currentId === city.id)
+      if (((typeof city !== `undefined`) && currentCityId === city.id)
         || ((typeof offer !== `undefined`) && currentPlaceId === offer.id)) {
         activeClassName = `active`;
       }
@@ -28,7 +28,7 @@ const withActiveCard = (Component) => {
     offer: PropTypes.shape({
       id: PropTypes.number.isRequired
     }),
-    currentId: PropTypes.number,
+    currentCityId: PropTypes.number,
     currentPlaceId: PropTypes.number
   };
   return WithActiveCard;

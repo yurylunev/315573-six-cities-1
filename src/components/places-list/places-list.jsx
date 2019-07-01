@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PlaceCard from "./place-card.jsx";
+import PlaceCard from "../place-card/place-card.jsx";
 import {connect} from "react-redux";
-import {getCurrentCity} from "../reducers/selectors";
+import {getCurrentCity} from "../../reducers/selectors";
 
 export class PlacesList extends React.PureComponent {
   constructor(props) {
@@ -30,7 +30,7 @@ PlacesList.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  offers: getCurrentCity(state)[0].offers,
+  offers: getCurrentCity(state).offers,
   currentPlaceId: state.APP.currentPlaceId
 });
 

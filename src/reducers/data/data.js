@@ -12,9 +12,6 @@ const ActionCreator = {
       type: ActionType.LOAD_OFFERS,
       payload: offers
     };
-  },
-  'requireAuthorization': (auth) => {
-    return auth;
   }
 };
 
@@ -48,11 +45,10 @@ const mapCity = (offer, cityOffers, i) => ({
 });
 
 const Operation = {
-  loadOffersAsync: () => (dispatch) => {
-    return fetch(`https://es31-server.appspot.com/six-cities/hotels`)
-      .then((response) => response.json())
+  loadOffersAsync: () => (dispatch, _getState, api) => {
+    return api.get(`/hotels`)
       .then((offers) => {
-        const sortedOffers = (offers.sort((a, b) => (a.city.name > b.city.name) ? -1 : 1));
+        const sortedOffers = (offers.data.sort((a, b) => (a.city.name > b.city.name) ? -1 : 1));
         let cities = [];
         let cityOffers = [];
         for (let i = 0; i < sortedOffers.length - 1; i++) {
@@ -61,13 +57,13 @@ const Operation = {
               const offer = sortedOffers[i];
               cityOffers.push(mapOffer(offer));
               if (offer.city.name !== sortedOffers[i + 1].city.name) {
-                cities.push(mapCity(offer, cityOffers, i));
+                cities.push(mapCity(offer, cityOffers, cities.length));
                 cityOffers = [];
               }
             } else {
               const offer = sortedOffers[i + 1];
               cityOffers.push(mapOffer(offer));
-              cities.push(mapCity(offer, cityOffers, i));
+              cities.push(mapCity(offer, cityOffers, cities.length));
               cityOffers = [];
             }
           }
